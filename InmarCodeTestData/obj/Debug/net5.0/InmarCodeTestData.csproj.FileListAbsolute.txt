@@ -1,0 +1,12 @@
+C:\InmarCodeTest\InmarCodeTestData\bin\Debug\net5.0\InmarCodeTestData.deps.json
+C:\InmarCodeTest\InmarCodeTestData\bin\Debug\net5.0\InmarCodeTestData.dll
+C:\InmarCodeTest\InmarCodeTestData\bin\Debug\net5.0\ref\InmarCodeTestData.dll
+C:\InmarCodeTest\InmarCodeTestData\bin\Debug\net5.0\InmarCodeTestData.pdb
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.csproj.AssemblyReference.cache
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.GeneratedMSBuildEditorConfig.editorconfig
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.AssemblyInfoInputs.cache
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.AssemblyInfo.cs
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.csproj.CoreCompileInputs.cache
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.dll
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\ref\InmarCodeTestData.dll
+C:\InmarCodeTest\InmarCodeTestData\obj\Debug\net5.0\InmarCodeTestData.pdb

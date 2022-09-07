@@ -1,0 +1,16 @@
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.exe
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.deps.json
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.runtimeconfig.json
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.runtimeconfig.dev.json
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.dll
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\ref\InmarLogicalTest.dll
+C:\InmarCodeTest\InmarLogicalTest\bin\Debug\net5.0\InmarLogicalTest.pdb
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.csproj.AssemblyReference.cache
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.AssemblyInfoInputs.cache
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.AssemblyInfo.cs
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.csproj.CoreCompileInputs.cache
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.dll
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\ref\InmarLogicalTest.dll
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.pdb
+C:\InmarCodeTest\InmarLogicalTest\obj\Debug\net5.0\InmarLogicalTest.genruntimeconfig.cache
