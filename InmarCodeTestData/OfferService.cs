@@ -36,9 +36,9 @@ namespace InmarCodeTestData
 
     public IList<Product> SortedProducts()
     {
-      _Inventory.ToList().Sort(new ProductComparer());
-       Array.Sort<Product>(_Inventory.ToArray());
-      return _Inventory;
+      var arrayOfElement = _Inventory.ToArray();
+       Array.Sort<Product>(arrayOfElement);
+      return arrayOfElement.ToList();
     }
 
     public IList<Product> GetAllProducts()

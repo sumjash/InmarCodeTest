@@ -32,7 +32,7 @@ namespace InmarCodeTestApis.Controllers
     public IList<Product> GetAllProduct()
     {
       var products = _Service.SortedProducts();
-      var lowerstPriceProducts = products.ToList().TakeLast(3);
+      var lowerstPriceProducts = products.ToList().Take(3);
       return lowerstPriceProducts.ToList();
     }
 
@@ -40,11 +40,9 @@ namespace InmarCodeTestApis.Controllers
 
     [Route("GetProductWithSecondLowestPrice")]
     public Product GetProductWithSecondLowestPrice()
-    {
-    
+    {    
       var products = _Service.SortedProducts();
-      var count = products.Count();
-      var lowerstPriceProducts = products.Reverse().ToList()[count -1];
+      var lowerstPriceProducts = products[1];
       return lowerstPriceProducts;
     }
 
