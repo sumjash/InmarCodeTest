@@ -1,0 +1,36 @@
+@using System.Web.Http
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using System.Web.Http.Controllers
+@using Jda.WfmEssApi.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+           
+@{
+  ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.OrderBy
+    (d => d.ActionDescriptor.ControllerDescriptor.ControllerName).
+    ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Web API Resources</h1>
+            </hgroup>
+            <p>
+              The BlueYonder WFM ESS API provides the following resources. Click on a link to read the API documentation
+              for accessing and modifying each resource.
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>
+
+@section Scripts {
+    <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+}

@@ -1,0 +1,40 @@
+﻿table.api {
+  border: none;
+  border-collapse: collapse;
+}
+
+table.api td, th {
+  border: 1px solid #000000;
+  vertical-align: bottom;
+  padding: 7px;
+  vertical-align: baseline;
+}
+
+table.api td.resourceGroup {
+  font-weight: bold;
+}
+
+table.api tr.header {
+  border: 1px solid #000000;
+  vertical-align: bottom;
+  background-color: #efefef;
+  padding: 7px 3px 7px 3px;
+  font-weight: bold;
+}
+
+th
+{
+  vertical-align: middle;
+  color: white;
+  background-color: #005596;
+}
+
+td
+{
+  vertical-align: middle;
+  background-color: white;
+}
+
+pre.code {
+   background-color: white;
+}

@@ -1,0 +1,23 @@
+@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@model EnumTypeModelDescription
+
+<p>Click<a href=@Url.Action("Index", "Help", null, null)#Enum-Usage>here</a>to learn more about how to use enums.</p>
+<p>Possible enumeration values:</p>
+
+<table class="help-page-table">
+  <thead>
+  <tr><th>Name</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+  @foreach (EnumValueDescription value in Model.Values)
+  {
+    <tr>
+      <td class="enum-name"><b>@value.Name</b></td>
+      <td class="enum-description">
+        <p>@value.Documentation</p>
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
+

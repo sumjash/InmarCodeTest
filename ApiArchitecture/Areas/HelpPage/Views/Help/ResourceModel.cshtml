@@ -1,0 +1,22 @@
+@using System.Web.Http
+@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@model ModelDescription
+
+
+<div id="body">
+ 
+  
+    <div class="content-wrapper">
+      <h1>@Model.Name</h1>
+      <p>@Model.Documentation</p>
+    </div>
+
+  <section class="content-wrapper main-content clear-fix">
+    @Html.DisplayFor(m => Model)
+  </section>
+</div>
+
+@section Scripts {
+  <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+}
+

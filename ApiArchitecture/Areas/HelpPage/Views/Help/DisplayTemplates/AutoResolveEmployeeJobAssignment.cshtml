@@ -1,0 +1,420 @@
+﻿@model string
+
+<h2>Auto-Resolve Behavior</h2>
+<br/>
+<table class="help-page-table">
+  <thead>
+  <tr>
+    <th>Transactional Data</th><th>Condition</th><th>Outcome</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="parameter-name">
+      <p>Back Pay (Punch or Adjustment)</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>The job assignment starts past, current, or future relative to current day. The back pay start date is contained within the new employee primary job assignment dates. The punched shift starts in the past (less than or equal to the current date and greater than or equal to the new job assignment start date) or the future and is in a closed pay period.</p>
+    </td>
+    <td class="parameter-type">
+      <p>The following exception occurs and no changes are applied when a back pay adjustment exists.
+        CannotUpdateJobAssignmentDueToBackPayAdjustment
+        The following exception occurs and no changes are applied when a back pay punch exists.
+        CannotUpdateJobAssignmentDueToBackPayPunch</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>The job assignment starts past, current, or future relative to current day.
+        The pay adjustment occurs in an open or closed pay period and is contained within
+        the new employee primary job assignment dates. The same pay rule is in effect in the new
+        job assignment.</p>
+    </td>
+    <td class="parameter-type">
+      <p>A new job assignment record is created. The previous job assignment record is
+        end dated (end date is exclusive). The job associated with the adjustment is updated.</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment occurs in an open or closed pay period and is contained within the
+        new employee primary job assignment dates. The pay adjustment is valid in the new pay
+        rule specified. A pay adjustment is valid for a new pay policy if new policy has a
+        matching pay adjustment (for example, Vacation) associated with the same pay category
+        (for example, Normal) as the previous pay policy. If the pay adjustment is linked to
+        multiple category definitions with the same pay category, the first valid combination is used.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is
+        end dated (end date is exclusive). The job, pay policy, and pay category definition
+        associated with the adjustment are updated.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment occurs in an open or closed pay period and is contained within
+        the new employee primary job assignment dates. The pay adjustment is not valid in
+        the new pay rule specified. A pay adjustment is not valid for a new pay policy if
+        new policy does not have a matching pay adjustment (for example, Vacation)
+        associated with the same pay category (for example, Normal) as the previous pay policy.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The following exception occurs and no changes are applied.
+        EmployeeJobAssignmentErrorCode.AdjustmentTypeDoesNotExistInEmployeePayPolicy
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment Associated with a Paid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment is associated to a paid time off request. The time off
+        request start date is in an open pay period, and is contained within the new
+        employee primary job assignment dates. The pay adjustment is not valid in the
+        new pay rule specified. A pay adjustment is not valid for a new pay policy if
+        new policy does not have a matching pay adjustment (e.g., Vacation) associated
+        with the same pay category (e.g., Normal) as the previous pay policy.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The existing pay adjustments are deleted and the time off request is reverted to
+        a requested state with the type removed. The time off request details are cleared.
+        A comment is added to the time off request to inform the user it was edited because
+        of a job change. "The Time Off Request was reset to Pending due to conflicts from an
+        Employee's Primary Job Assignment change."
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment Associated with a Paid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment is associated to a paid time off request. The time off
+        request start date is in a closed pay period, and is contained within the
+        new employee primary job assignment dates. The pay adjustment is not valid in
+        the new pay rule specified. A pay adjustment is not valid for a new pay policy
+        if new policy does not have a matching pay adjustment (for example, Vacation)
+        associated with the same pay category (for example, Normal) as the previous pay policy.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The following exception occurs and no changes are applied.
+        EmployeeJobAssignmentErrorCode.AdjustmentTypeDoesNotExistInEmployeePayPolicy
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment Associated with a Paid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment is associated to a paid time off request. The time off request
+        start date is in a closed pay period, and is contained within the new employee primary
+        job assignment dates. The parent time off request type is not valid in the new pay rule
+        specified but the associated pay adjustment and time off request details are valid.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The following exception occurs and no changes are applied.
+        EmployeeJobAssignmentErrorCode.AdjustmentTypeDoesNotExistInEmployeePayPolicy
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment Associated with a Paid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment is associated to a paid time off request. The time off request start
+        date is in an open or a closed pay period and is contained within the new employee primary
+        job assignment dates The parent time off request type exists in the new pay rule and the
+        associated pay adjustment and time off request details are valid in the new pay rule specified.
+        A pay adjustment is not valid for a new pay policy if the new policy does not have a matching
+        pay adjustment (e.g., Vacation) associated with the same pay category (e.g., Normal) as the previous pay policy.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The job, pay policy, and pay category definition associated with the adjustment are updated.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Adjustment Associated with a Paid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay adjustment is associated to a paid time off request.
+        The time off request start date is in an open pay period and is contained within the new employee primary
+        job assignment dates. The parent time off request type is not valid in the new pay rule specified but the
+        associated pay adjustment and time off request details are valid.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The existing pay adjustments are deleted and the time off request reverts to a requested
+        state with the type removed. The time off request details are cleared.
+        A comment is added to the time off request to inform the user it was edited because of a job change.
+        "The Time Off Request was reset to Pending due to conflicts from an Employee's Primary Job Assignment change."
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Record</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The pay record date is contained within the new employee primary job assignment dates.
+        The pay record is in an open pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The pay record is updated the next time the pay engine is run.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Record</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        A standalone pay record (not tied to a punched shift or a pay adjustment) date is contained within
+        the new employee primary job assignment dates. The pay record is in a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The pay record is updated will be updated with the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Record</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. A pay record tied to a pay
+        adjustment date is contained within the new employee primary job assignment dates. The pay record is in a
+        closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The pay record tied to the pay adjustment is updated with the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Record</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. A pay record tied to a pay
+        adjustment date is contained within the new employee primary job assignment dates. The pay record is in a
+        closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The pay record tied to the pay adjustment is updated with the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Pay Record</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. A pay record tied to a punch
+        shift date is contained within the new employee primary job assignment dates.
+        The pay record is in a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The pay record tied to the punched shift is updated with the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Punched Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. The punched shift start date is
+        contained within the new employee primary job assignment dates. The punched shift starts in the future
+        (greater than the current date and greater than or equal to the new job assignment start date) and is in
+        an open pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        The following exception occurs and no changes are applied.
+        EmployeeJobAssignmentErrorCode.JobAssignmentPunchedShiftValidationError
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Punched Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. The punched shift start date is
+        contained within the new employee primary job assignment dates. The punched shift starts in the past
+        (less than or equal to the current date and greater than or equal to the new job assignment start date)
+        and is in an open or a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). A secondary job record is created to cover the span of the punched shifts.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Punched Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The punched shift start date is contained within the new employee primary job assignment dates.
+        The new primary job already exists as a secondary job in the past and in a closed pay period.
+        The punched shift starts in the past (less than or equal to the current date and greater than or equal to
+        the new job assignment start date) and is in an open or a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The secondary job record is end dated and the updated job is the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Scheduled Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day.
+        The scheduled shift start date is contained within the new employee primary job assignment dates.
+        The scheduled shift starts in the future (greater than the current date and greater than or equal to the
+        new job assignment start date) and in an open pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The future scheduled shifts for the previous primary job are unfilled.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Scheduled Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. The scheduled shift start date
+        is contained within the new employee primary job assignment dates. The scheduled shift starts in the past
+        (less than or equal to the current date and greater than or equal to the new job assignment start date) and
+        is in an open or a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). A secondary job record is created to cover the span of the scheduled shifts.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Scheduled Shift</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. The scheduled shift
+        start date is contained within the new employee primary job assignment dates. The new primary job already
+        exists as a secondary job in the past and in a closed pay period. The scheduled shift starts in the past
+        (less than or equal to the current date and greater than or equal to the new job assignment start date) and
+        is in an open or a closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated
+        (end date is exclusive). The secondary job record is end dated and the updated job is the new primary job.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>Unpaid Time Off Request</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        The job assignment starts past, current, or future relative to current day. Unpaid time off request exists
+        in an open or closed pay period.
+      </p>
+    </td>
+    <td class="parameter-type">
+      <p>
+        A new job assignment record is created. The previous job assignment record is end dated (end date is exclusive).
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,690 @@
+<div id="body">
+  <section class="featured">
+    <div class="content-wrapper">
+      <hgroup class="title">
+        <h1>Introduction</h1>
+      </hgroup>
+      <p>
+        The BlueYonder WFM Ess APIs allow you to create, modify, and query data for the WFM Ess persona.
+        Since the APIs are based on REST principles, a browser can be used to access URLs,
+        and you can use any HTTP client in any programming language to interact with the API.
+      </p>
+    </div>
+  </section>
+  <section class="content-wrapper main-content clear-fix">
+
+    <!-- API Capabilities Table -->
+    <p>
+      The following table lists the basic functional areas and corresponding capabilities covered in this release:
+    </p>
+
+    <table class="api">
+      <tr>
+        <th>API</th>
+        <th>Resource Group</th>
+        <th>URI Version</th>
+        <th>Create</th>
+        <th>Read</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">ClientSettings</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Information</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Employment Details</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Scheduling</td>
+        <td class="resourceGroup">Unfilled Shifts</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Scheduling</td>
+        <td class="resourceGroup">Time Card</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Scheduling</td>
+        <td class="resourceGroup">Schedules</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Organization</td>
+        <td class="resourceGroup">Feature Configuration</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>HR</td>
+        <td class="resourceGroup">Time Off Types</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Unpaired Punches</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Accruals</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Swap Shifts</td>
+        <td>v1-beta2</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Availability</td>
+        <td>v1-beta2</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">PunchEdit Approvals</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Pay Summary</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+        <td>&#10007;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Shift Offer</td>
+        <td>v1-beta2</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="resourceGroup">Voluntary Time Off</td>
+        <td>v1-beta2</td>
+        <td>&#10007;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10007;</td>
+      </tr>
+    </table>
+
+    <p>
+      &#10003; - fully supported <br />
+      &#10043; - partially supported <br />
+      &#10007; - not supported<br />
+      <br />
+    </p>
+
+    <p>
+      You can view API help information in your browser by accessing the following path: <br />
+      http(s)://{hostname}/{wfmEssApi persona IIS web application}<b>/help</b><br />
+      For Example:<br />
+      <a href="http://example.com/ws-wfmEssApi/help">http://example.com/ws-wfmEssApi<b>/help</b></a>
+    </p>
+
+    <!-- Authentication/Identity Management -->
+    <hr />
+    <h1>Authentication/Authorization/Identity Management</h1>
+    <p>
+      The Web APIs require a session cookie or access token (if using OAuth) from REFS. To obtain either of these,
+      API clients must log in by making a special HTTP request:
+      <br />To use session cookies, perform the following steps:
+    </p>
+    <ol start="1">
+      <li>
+        POST to {refs}<b>/data/login</b> where {refs} is the base URL for your main REFS/RPWEB installation.
+        For example, <a href="http://example.com/retail/data/login">http://example.com/<b>retail/data/login</b></a>
+      </li>
+      <li>
+        Include an &quot;application/x-www-form-urlencoded&quot; payload including
+        the &quot;loginName&quot; and &quot;password&quot; as plain text parameters.
+        <ul>
+          <li>
+            The user account must include&nbsp;either the &ldquo;EssRoleAccess&rdquo; feature,
+            or if no roles are assigned to that feature, then the user must be assigned to the Client Ess role.
+          </li>
+        </ul>
+        <p>
+          <b>Note:</b> If "loginName" value uses a language other than English, "charset=UTF-8" should be included in the Content-Type header.<br />
+          Otherwise the server will assume "ISO-8859-1" as the default.
+        </p>
+      <li>
+        Capture the &quot;REFSSessionID&quot; cookie from the response. The cookie should include a
+        long string of hexadecimal characters.
+      </li>
+    </ol>
+    <p><b>Note:</b> Include the cookie as a header on subsequent API requests or&nbsp;they will be rejected.</p>
+    <p>
+      To use access tokens for OAuth, perform the following steps:
+      <b>Note:</b>Instead of Writing anything from scratch for OAuth 2.0, evaluate existing client libraries such as ones listed in http://oauth.net/2/
+      <ol start="1">
+        <li>
+          POST to {refs}<b>/auth/v1/token</b> where {refs} is the base URL for your main REFS/RPWEB installation. For example,
+          <a href="https://example.com/retail/auth/v1/token">https://example.com/<b>retail/auth/v1/token</b></a>
+        </li>
+        <li>
+          Include an “application/x-www-form-urlencoded” payload including the “client_id”, “client_secret” and “grant_type” as plain text parameters.
+          <ul>
+            <li>
+              The user account must include either the “EssRoleAccess” feature, or if no roles are assigned to that feature, then the user must be assigned to the Worker role.
+            </li>
+            <li>
+              The “grant_type” must be set as “client_credentials”. This is the only grant we are supporting at this point.
+            </li>
+            <li>
+              The “client_id” and “client_secret” parameters need to be set as the values you use as your “loginName” and “password” respectively as you have been using for generating REFS session cookies
+            </li>
+          </ul>
+
+          Example request for access token (extra line breaks for display purposes only and HTTP request using
+          transport-layer security):<br /><br />
+          <i>
+            POST /auth/v1/token HTTP/1.1<br />
+            Host: example.com<br />
+            Content-Type: application/x-www-form-urlencoded<br /><br />
+            client_id=johndoe&client_secret=A3ddj3w&grant_type=client_credentials<br /><br />
+          </i>
+          A successful receipt of access token (extra line breaks for display purposes only and HTTP request using transport-layer security):<br /><br />
+          <i>
+            HTTP/1.1 200 OK<br />
+            Content-Type: application/json<br />
+            Secure Protocol: Tls<br />
+            Cache-Control: no-store<br />
+            &nbsp{<br />
+            &nbsp&nbsp&nbsp"access_token":"2Yotn...omitted for brevity",<br />
+            &nbsp&nbsp&nbsp"token_type":"Bearer"<br />
+            &nbsp}<br /><br />
+          </i>
+        </li>
+    <p>
+      <b>Note:</b> If "client_id" value uses a language other than English, "charset=UTF-8" should be included in the Content-Type header.<br />
+      Otherwise the server will assume "ISO-8859-1" as the default.
+    </p>
+    <li>Capture the "access_token" value received in response (inside the quotes). This is the access token and needs to be used for subsequent requests without which the requests will be rejected.</li>
+    <li>
+      Include the captured access token in subsequent API requests under header “Authorization” as “Bearer &lt;Space&gt; &lt;captured access token&gt;”<br />
+      An example request for data using the access token (with extra line breaks for display purposes only and HTTP request using transport-layer security):<br />
+      <p>
+        <i>
+          GET /wfmess/api/v1-beta2/countries HTTP/1.1<br />
+          Host: example.com<br />
+          Authorization: Bearer 2Yotn...omitted for brevity<br />
+        </i>
+      </p>
+    </li>
+    <li>
+      Instead of writing anything from scratch for OAuth 2.0 you could evaluate existing client libraries such as ones listed in http://oauth.net/2/.
+    </li>
+    </ol>
+    </p>
+    <p>
+      <b>About OAuth:</b> <br />
+      OAuth is a framework which enables a third-party application to obtain limited access to an HTTP/S service, either on behalf of a resource owner by orchestrating an approval interaction between the resource owner and the HTTP/S service, or by allowing the third-party application to obtain access on its own behalf.
+      Currently, the version 2.0 of the framework is used, and supports only the
+      "grant_type" of "client_credentials". <br /><br />
+      As mentioned in the previous example, while using OAuth communication with the server should
+      involve use of access tokens<br /><br />
+      <b>Inside an OAuth access token</b> <br />
+      The access token is in the form of a JSON Web Token (JWT). The underlying information can be verified and trusted as it is digitally signed. Currently REFS supports signing with public/private key pair using RSA. For this as of now REFS supports only RS256 and RS512 algorithms with RS256 being the default.<br />
+      The <em>public/private cryptographic</em> key pair is stored in a JSON Web Key (JWK).<br /><br />
+
+      The parameters inside an access token:
+    </p>
+    <ul>
+      <li><b>iat</b> : REFS server time when the access token was issued.</li>
+      <li><b>exp</b> : REFS server time when the access token is supposed to expire.</li>
+      <li><b>sub</b> : The client_id for whom token is issued. In current context the loginName.</li>
+      <li><b>iss</b> : Principal that issued the access token.This is a logical name for the REFS install and its canonical URL, space delimited.</li>
+      <li><b>aud</b> :  The canonical URL to the REFS install.</li>
+      <li><b>jda</b> : JSON object to hold all BlueYonder-specific grants.</li>
+    </ul>
+    <br />
+    <b>Note:</b>
+    When using OAuth, lack of the transport-layer security can have a severe impact on the security of the client and the protected resources it is authorized to access as this leads to the tokens being transmitted in plain text.
+    Hence, BlueYonder strongly recommends the server to be configured with TLS to ensure a secure communication channel also ensuring compliance with the OAuth 2.0 specifications. Not following the recommendation make the implementation susceptible to interception or replay attacks by eavesdroppers.<br /><br />
+
+    <!--API URLs-->
+    <hr />
+    <h1>API URLs</h1>
+    <p>
+      Once authenticated, access the web API resources referenced in this documentation using the following convention for URLs:<br />
+      {refs}/<b>data/wfmEss</b>/{api URL}<br />
+      <ol start="1">
+        <li>
+          {refs}/data/wfmEss/{api URL} in case using session cookies.<br />
+          For example, for a REFS server at &quot;http://example.com/retail&quot;, the Sites API can be accessed at <a href=" http//example.com/retail/data/wfmess/api/v1-beta2/sites">http://example.com/retail/<b>data/wfmess/api</b>/v1-beta2/sites</a>
+        </li>
+        <li>
+          {refs}/wfmEss/{api URL} in case using OAuth.<br />
+          For example, for a REFS server at "https://example.com/retail", the Sites API can be accessed
+          at <a href="https://example.com/retail/wfmEss/api/">https://example.com/retail<b>/wfmess/api/</b>v1-beta2/sites</a>
+        </li>
+      </ol>
+
+      <b>Note:</b>
+      When using OAuth, lack of the transport-layer security can have a severe impact on the security of the client and the protected resources it is authorized to access as this leads to the tokens being transmitted in plain text.
+      Hence, BlueYonder strongly recommends the server to be configured with TLS to ensure a secure communication channel also ensuring compliance with the OAuth 2.0 specifications. Not following the recommendation make the implementation susceptible to interception or replay attacks by eavesdroppers.<br /><br />
+    </p>
+
+    <!-- API Contract -->
+    <hr />
+    <h1>API Contract</h1>
+    <ul>
+      <li>All requests and responses have Content-Type of &ldquo;application/json&rdquo;</li>
+      <li>API version is part of the URI</li>
+      <li>
+        The following list of HTTP methods are used:
+        <ul>
+          <li>
+            <b>GET</b> - reads a resource/collection, never modifies the application state (can modify logging,
+            analytics, etc.)
+          </li>
+          <li>
+            <b>POST</b> - creates a new resource [in a collection]; Canonical URI is generated by the server, not client.
+            A successful POST returns 201 status code with location header set to location of created resource;
+            body contains newly created resource.
+          </li>
+          <li>
+            <b>PUT</b> - wholly updates a resource/collection (possibly with an imperfect representation); it may also
+            create an item if the client is allowed to generate the Canonical URI. A successful PUT returns 200
+            status code; body contains updated resource.
+          </li>
+          <li>
+            <b>DELETE</b> - logically removes an item from its collection or a collection (actually deletes it,
+            archives to a new collection, etc.)
+          </li>
+        </ul>
+      <li>The following table lists common response success codes:</li>
+    </ul>
+
+    <table class="api">
+      <tr>
+        <th>HTTP Code</th>
+        <th>Standard Phrase</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>200</td>
+        <td>OK</td>
+        <td>
+          Everything was successful. Returns a body (desired response for a GET or updated/deleted entity
+          on PUT/DELETE).
+        </td>
+      </tr>
+      <tr>
+        <td>201</td>
+        <td>Created</td>
+        <td>
+          The new resource was created. Includes location header with Canonical URI. Should usually return
+          the new resource in the body.
+        </td>
+      </tr>
+      <tr>
+        <td>202</td>
+        <td>Accepted</td>
+        <td>
+          The request has been accepted for processing. Should return a response body that summarizes the status of the request.
+        </td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>The following table lists common response error codes:</li>
+    </ul>
+
+    <table class="api">
+      <tr>
+        <th>HTTP Code</th>
+        <th>Standard Phrase</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>400</td>
+        <td>Bad Request</td>
+        <td>
+          Incorrect syntax used (such as entity did not include JSON, malformed JSON, enum value is invalid,
+          invalid date format, etc.).
+        </td>
+      </tr>
+      <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+        <td>A necessary identity has not been established to access the resource</td>
+      </tr>
+      <tr>
+        <td>403</td>
+        <td>Forbidden</td>
+        <td>Access to the resource has been denied</td>
+      </tr>
+      <tr>
+        <td>404</td>
+        <td>Not Found</td>
+        <td>Primary resource requested doesn't exist (ex: if tors/123, then tor#123 doesn't exist).</td>
+      </tr>
+      <tr>
+        <td>409</td>
+        <td>Conflict</td>
+        <td>
+          Default for all business logic violations (4xx implies the client can alter the request and try again).
+          Default for all expected DomainOperationExceptions and ApplicationOperationExceptions.
+          Failed a duplicate check for a create/update.
+          State transition or other update is invalid given current state of Resource.
+          Referenced resource not CDMed or does not exist.
+          Anything not related to syntax (see 400), but still semantically invalid because of its relation to
+          another item or anything else the client can fix before resubmitting.
+        </td>
+      </tr>
+      <tr>
+        <td>500</td>
+        <td>Internal Server Error</td>
+        <td>
+          Default for an unplanned exception of any type. Indicates a code/design problem, not something that
+          is expected to be corrected by the client.
+        </td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>Common error structure (JSON) within response body:</li>
+    </ul>
+
+    <pre class="code">
+      {
+        &quot;userMessage&quot; : &quot;Pass this message on to the app user if needed.&quot;,
+        &quot;developerMessage&quot; : &quot;Verbose, plain language description of the problem for the app developer with hints about how to fix it.&quot;,
+        &quot;errorCode&quot; : &quot;unique.errorCode.perMessage&quot;,
+        &quot;timestamp&quot; : &quot;2012-07-25T12:00:00Z&quot;,
+        &quot;moreInfo&quot;: &quot;http://example.com/app/api/errors/unique.errorCode.perMessage&quot;
+      }
+    </pre>
+
+    <ul>
+      <li>
+        Cross referencing (lookups)
+        <ul>
+          <li>
+            Due to the fine-grained nature of the WFM Ess APIs, GET requests are available for any resource
+            that is referenced by, assigned to or linked to another resource. In each case, at least one GET method
+            exists using a parameter available to the client to search or filter for a specific entity.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Link structure conventions
+        <ul>
+          <li>
+            All links are seen under meta field:
+            <ul>
+              <li>
+                <b>rel</b>: Required. Short for relation, indicates the relationship between the current resource and the
+                target of the link.
+              </li>
+              <li>
+                <b>href</b>: Required. Short for hypertext reference, indicates the URI the server prefers the client
+                use when accessing the target of the link. This should be a URL.
+              </li>
+              <li>
+                <b>method</b>: Optional. The HTTP method (verb) used when following this link. If this field is not present,
+                then GET is assumed as the default.
+              </li>
+              <li>
+                <b>type</b>: Optional. The media type the server prefers to be used for the request representation (request body)
+                that must be supplied when following this link. If the request does not require a body (such as with a GET),
+                then this field may be absent.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Example links:
+            <pre class="code">
+    /* The "Meta Field" contains all the "metadata fields" */
+    "meta": {
+        "self": "api/v1/characters/123", /* Add a self link on all gettable representations */
+        "links": [ /* Use the links collection for ALL links */
+            { "rel": "home", "href": "api/v1/locations/456" },
+            { "rel": "update", "href": "api/v1/characters/123", "method": "PUT" }
+        ]
+    }
+           </pre>
+          </li>
+          <li><b>Note:</b> The &ldquo;meta&rdquo; link found on each resource is not a normal link structure.</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li id="Enum-Usage">
+        Enum Usage
+        <ul>
+          <li>
+            Pass enums as a string using their full (UpperCamelCased) name, for example, &quot;LeaveOfAbsence&quot;.
+            It is recommended practice to match the case of the enum.
+
+          </li>
+        </ul>
+      </li>
+      <li>
+        Nullable Fields and Null Markers
+        <ul>
+          <li>
+            For a field to be intentionally set to a null value, the field must be present in the request and
+            set to the JSON null keyword.
+          </li>
+          <li>
+            Fields not present in the request usually use the default value for their type, which may not be
+            a valid value for the request.
+          </li>
+          <li>
+            An empty string is not considered equivalent to null.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Field Validation
+        <ul>
+          <li>
+            The leading and trailing spaces of string fields are generally trimmed off prior to verification and persistence.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Differences between GET, POST, and PUT Structures
+        <ul>
+          <li>
+            Generally, what you GET is what you POST and/or PUT and vice versa. However, there are several fields that are generally not required on POST and PUT that are present when you GET, that is, the server will ignore them if in your request. For brevity, this isn't usually called out in the documentation of each resource. By convention, you can assume the following fields are not required for POST or PUT:
+            <ul>
+              <li>ID</li>
+              <li>Self, Actions, and all other links</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Batch Endpoints
+        <ul>
+          <li>
+            Some endpoints are intended for batch asynchronous processing rather than fine-grained synchronous operations. Generally these endpoints will contain the word batch or batches as part of the URI.
+          </li>
+          <li>
+            Requests are generally structured as a single "tasks" array containing the individual resources intended for batch processing.
+          </li>
+          <li>
+            The general conventions for /batches are (where exists):
+            <ul>
+              <li>
+                <b>POST ~/{resource}/batches</b>  - queues a batch for processing
+              </li>
+              <li>
+                <b>GET ~/{resource}/batches/{batchId}</b> - fetches the status of a batch that was queued
+              </li>
+              <li>
+                <b>GET ~/{resource}/batches</b> - fetch all "active" batches
+              </li>
+              <li>
+                <b>DELETE ~/{resource}/batches/{batchId}</b> - cancels an individual batch
+              </li>
+              <li>
+                <b>PUT ~/{resource}/batches/{batchId}</b> - allows replacement of the batch contents with new contents provided the batch has not begun processing
+              </li>
+            </ul>
+          </li>
+          <li>
+            The general conventions for /batch are (where exists):
+            <ul>
+              <li>
+                <b>POST ~/{resource}/batch</b> - queues a batch for processing
+              </li>
+              <li>
+                <b>GET ~/{resource}/batch</b> - fetches the status of the single batch
+              </li>
+              <li>
+                <b>DELETE ~/{resource}/batch</b> - cancels the single batch
+              </li>
+            </ul>
+          </li>
+          <li>
+            Responses contain the overall status of the batch with counts summarized by task status, as well as individual error messages if they exist.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Example code for interacting with the BlueYonder Retail APIs can be found on the server where the Retail application is installed at the following path:
+        <pre class="code">{BlueYonder Retail Root}\{Instance}<b>\wfmEssApiExamples</b></pre>
+      </li>
+      <br />
+    </ul>
+
+    <!-- API response Encoding - Output Encoding -->
+    <hr />
+    <h1> API response Encoding - Output Encoding</h1>
+    <p>
+      All the APIs listed under API guide follow certain output encoding behavior to avoid security vulnerablities(XSS etc).
+      All the <a href="~/Help/ResourceModel?modelName=FreeText">FreeText</a> fields under API responses are displayed in encoded format. Output encoding for all the APIs should be handled in respective application pages using html encoders/decoders.<br /><br />
+      For example, below mentioned is the encoded API response<br />
+      UserResource<br />
+      {<br />
+      "FirstName": "abc&<code>#39;</code>"(original value : "abc'")<br />
+      "LastName": "xyz&<code>amp;</code>"(original value : "xyz&")<br />
+      }
+    </p>
+    <table class="api">
+      <tr>
+        <th>Special Characters</th>
+        <td>'</td>
+        <td><</td>
+        <td>></td>
+        <td>&</td>
+      </tr>
+      <tr>
+        <th> Code</th>
+        <td>&<code>#39;</code></td>
+        <td>&<code>lt;</code></td>
+        <td> &<code>gt;</code></td>
+        <td> &<code>amp;</code></td>
+      </tr>
+    </table><br />
+
+    <!-- Performance Expections -->
+    <hr />
+    <h1>Performance Expectations</h1>
+    <p>
+      The values below are the general expectations for web API performance.
+      However, the expectations for a particular API may deviate from the generic <i>method-level</i> standards below.
+      Any exceptions to the rule can be found in the API documentation for that method and URL.
+    </p>
+    <p>
+      The expectations listed below represent elapsed time on the server for processing
+      each request only since network, bandwidth, latency, etc. will vary by implementation.
+      These are the values an API client should expect if hardware and network are correctly configured.
+      The APIs are designed to scale horizontally, so API clients should take this into consideration.
+      The expectations are general, some requests may take longer
+    </p>
+    <ul>
+      <li>
+        <b>GET</b> &lt;= 1s
+      </li>
+      <li>
+        <b>POST</b> &lt;= 2s
+      </li>
+      <li>
+        <b>PUT</b> &lt;= 3s
+      </li>
+      <li>
+        <b>DELETE</b> &lt;= 3s
+      </li>
+    </ul>
+    <hr />
+    <p>
+      <a href="~/Help/Api">Web API Resources</a>
+    </p>
+  </section>
+</div>
+
+@section Scripts {
+  <link type="text/css" href="~/Content/Home.css" rel="stylesheet" />
+}

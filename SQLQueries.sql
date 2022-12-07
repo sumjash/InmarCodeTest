@@ -16,8 +16,8 @@ inner Join Customer c on o.CustomerId = c.customerId
 Group by c.Name
 having c.name like 'joe'
 
-with CTE
-as OrderCount 
+with CTE 
+as  
 (
 select c.Name,COUNT(o.orderId) as orderCount
 from Product P
@@ -26,7 +26,7 @@ inner join Order o on op.orderId = op.orderId
 inner Join Customer c on o.CustomerId = c.customerId
 Group by c.Name, o.ORDERId)
 
-select *from OrderCount where orderCount >1
+select *from CTE where orderCount > 1
 
 
 

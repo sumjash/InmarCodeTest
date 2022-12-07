@@ -1,0 +1,15 @@
+﻿@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@model string
+
+<h3>Format</h3>
+<p>
+    The serialization format for SiteLocalTimestamp is "yyyy-MM-ddTHH:mm:ss," for example "2017-01-31T12:34:56"
+</p>
+
+<h3>Description</h3>
+<p>
+    A timestamp (date and time) that apps and APIs assume to be in the time zone of the Site that owns the record. The
+    apps and APIs store and display these as verbatim input. These can not be compared across Sites without first
+    translating them into a common time zone. A time zone can not be specified for these in requests. <br/>Example usage: 
+    Raw Punch Timestamp
+</p>

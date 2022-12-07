@@ -1,0 +1,19 @@
+﻿@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@model string
+
+<h3>Format</h3>
+<p>
+    The request and response entity serialization format for CalendarDate is "yyyy-MM-ddT00:00:00", for example 
+    "2017-01-301T00:00:00". The time portion is required in requests but must be midnight (all zeros).
+</p>
+<p>
+    The URI serialization format for CalendarDate is "yyyy-MM-dd", for example "2017-01-31". Do not include the time 
+    portion.
+</p>
+
+<h3>Description</h3>
+<p>
+    A date as the calendar defines it. A one day period starting at midnight and ending just prior to the next midnight.
+    It does not include the next midnight. Some UIs will display items based on an input Calendar Date or a range of them,
+     regardless of the type of Date the items displayed are stored with. <br/>Example usage: Employee Birth Date
+</p>

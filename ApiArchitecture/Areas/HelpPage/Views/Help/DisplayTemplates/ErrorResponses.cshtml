@@ -1,0 +1,49 @@
+﻿@using System.Text.RegularExpressions
+@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@using Jda.WfmEssApi.Common
+@using EnumHelper = Jda.WfmEssApi.Helpers.EnumHelper
+@model IEnumerable<Jda.WfmEssApi.Common.IErrorResponse>
+
+@functions
+{
+  // This function splits a camel-case string into separate words
+  // e.g. "InternalServerError" -> "Internal Server Error"
+  // e.g. "NotFound" -> "Not Found"
+  // e.g. "OK" -> "OK"
+  private string SplitCamelCase(string text)
+  {
+    return Regex.Replace(text, "(?<=[a-z])([A-Z])", " $1", RegexOptions.Compiled);
+  }
+}
+
+@if (Model.Count() > 0)
+{
+  <p/>
+  <table class="help-page-table">
+    <thead>
+      <tr><th>Status Code</th><th>Error Code</th><th>Scenario that Caused the Error</th></tr>
+    </thead>
+    <tbody>
+      @foreach (IErrorResponse errorResponse in Model)
+      {
+        <tr>
+          <td class="responseCode-statusCode">
+            <p>@((int)errorResponse.StatusCode) @SplitCamelCase(errorResponse.StatusCode.ToString())</p>
+          </td>
+          <td class="responseCode-description">
+            <p>@EnumHelper.ConvertEnumToString(errorResponse.ErrorCode)</p>
+          </td>
+          <td class="responseCode-scenario">
+             <p>@Html.Raw(@errorResponse.Scenario)</p>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+else
+{
+  <p>None.</p>
+}
+
+

@@ -1,0 +1,1578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AD8DDA2-0A07-449F-98B6-A4C26D8A06A7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jda.WfmEssApi</RootNamespace>
+    <AssemblyName>WfmEssApi</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>App_Data\WfmEssApi.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>App_Data\WfmEssApi.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.3.1.0\lib\net461\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Common\SharedBinaries\Log4net_2_0_8\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.5.3.5\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.0\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WaveDataContext, Version=18.2.1.92, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Common\SharedBinaries\WaveDataContext.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\WfmEssApi.xml" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\jda-logo-large.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Public\About.asmx" />
+    <Content Include="Public\Security.asmx" />
+    <Content Include="rpweb\config\mappings\modes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\..\common\tools\deploytorefs\rpweb.xml">
+      <Link>rpweb\rpweb.xml</Link>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="rpweb\csbuilder.xml" />
+    <Content Include="..\..\common\tools\deploytorefs\DeployToRefs.bat">
+      <Link>rpweb\DeployToRefs.bat</Link>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ReasonTypeDescription.cshtml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\knockout-3.1.0.debug.js" />
+    <Content Include="Scripts\knockout-3.1.0.js" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Services\BusinessUnit.asmx" />
+    <Content Include="Services\Commands.asmx" />
+    <Content Include="Services\Diagnostics.asmx" />
+    <Content Include="Services\Employee.asmx" />
+    <EmbeddedResource Include="SwaggerResources\CustomSwaggerStyling.css" />
+    <EmbeddedResource Include="SwaggerResources\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\ControllerDependencyRegistration.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\PersonaDataLevelPermissions.cs" />
+    <Compile Include="App_Start\PersonaPermissions.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\PersonaAuthorize.cs" />
+    <Compile Include="App_Start\TraceConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\ComplexTypeModelDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JsonNetMediaTypeFormatterForEssApi.cs" />
+    <Compile Include="ModelValidationFilterAttribute.cs" />
+    <Compile Include="src-server\AdjustmentCategory\AdjustmentCategoryMeta.cs" />
+    <Compile Include="src-server\Application\PostedScheduledWeekDateService.cs" />
+    <Compile Include="src-server\Application\MyWeeklyScheduleService.cs" />
+    <Compile Include="src-server\AvailabilityByDay\AvailabilityByDayMapper.cs" />
+    <Compile Include="src-server\AvailabilityByDay\AvailabilityByDayMeta.cs" />
+    <Compile Include="src-server\AvailabilityByDay\AvailabilityByDayResource.cs" />
+    <Compile Include="src-server\ClientSettingsApi\ClientSettingsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\ClientSettingsApi\ClientSettingsApiOperationFactory.cs" />
+    <Compile Include="src-server\ClientSettingsApi\ClientSettingsController.cs" />
+    <Compile Include="src-server\ClientSettingsApi\OperationCoordinators\GetClientSettingsOperationCoordinator.cs" />
+    <Compile Include="src-server\ClientSettingsApi\Queries\GetClientSettings.cs" />
+    <Compile Include="src-server\ClientSettingsApi\Resources\ClientSettingsMapper.cs" />
+    <Compile Include="src-server\ClientSettingsApi\Resources\ClientSettingsMeta.cs" />
+    <Compile Include="src-server\ClientSettingsApi\Resources\ClientSettingsResource.cs" />
+    <Compile Include="src-server\Common\ApiExceptionCodesExtended.cs" />
+    <Compile Include="src-server\Common\Enums\Day.cs" />
+    <Compile Include="src-server\Common\Enums\DayEnumRegistry.cs" />
+    <Compile Include="src-server\Common\Enums\PunchEditApprovalStatusCode.cs" />
+    <Compile Include="src-server\Common\Enums\ShiftEditStatusCode.cs" />
+    <Compile Include="src-server\Common\Enums\ShiftEditActionCode.cs" />
+    <Compile Include="src-server\Common\Enums\PunchEditStatusCode.cs" />
+    <Compile Include="src-server\Common\Enums\PunchOperationCode.cs" />
+    <Compile Include="src-server\Common\ErrorResponses\LiamRealmServiceAuthenticationFailed.cs" />
+    <Compile Include="src-server\Common\ErrorResponses\UnauthorizedAccess.cs" />
+    <Compile Include="src-server\Common\ErrorResponses\LiamRealmServiceNotConfigured.cs" />
+    <Compile Include="src-server\Common\HttpContextManager.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\DataStorageAllOthers.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\DataStorageErrorResponses.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\OopsErrorResponse.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\UnauthorizedExceptionResponse.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\UnmappedException.cs" />
+    <Compile Include="src-server\ErrorLogging\ErrorResponses\UnsupportedMediaTypeResponse.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityCannotStartInPeriodWithRotations.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityRequestCannotSpanEmployeeAvailabilities.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityMustHaveSameMinutesPerDayForTimeRangesPerDay.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityTimeRangesCanNotOverlap.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\CannotEditAvailabilityRequestExceptRequestedStatus.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailbilityRequestTimeRangesShouldBeIn15MinutesIncrement.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\PreferedAvailabilityIsNotConfiguredForSite.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityDayRankHasGaps.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityDayRankOutOfRange.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityMinutesPerDayShouldBeIn15MinutesIncrement.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityMinutesPerWeekShouldBeIn15MinutesIncrement.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityPreferenceByDayHasNoGeneralAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityPreferenceByDayMustBeUnique.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityPreferredMinutesCanNotExceedGeneralAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityPreferredMinutesCanNotExceedPreferredAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityPreferredMinutesMustBePositive.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityRequestErrorResponse.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityWeeklyHoursCanNotExceedGeneralAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityWeeklyHoursCanNotExceedPreferredAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityWeeklyHoursMustBeGreaterThanZero.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityStartMustBeBeforeEnd.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\MyAvailabilityCanNotEndInThePast.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestPreferenceByDayResource .cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestPreferenceByDayMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityPreferenceByDayMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityPreferenceByDayResource.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\CannotScheduleEmployeeWhoIsNeitherBorrowedNorOwned.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\CannotWorkSplitShifts.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\ShiftHasAlreadyBeenClaimed.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\ShiftNotAvailableToClaim.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\PendingEditExistsForScheduledShift.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\TimeOffLimitExceededForCallOffTor.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\NoPayPeriodConfigurationForRequestedTimestamp.cs" />
+    <Compile Include="src-server\MyHealthApi\OperationCoordinators\GetMyHealthReasonsCoordinator.cs" />
+    <Compile Include="src-server\MyHealthApi\Queries\GetMyHealthReasons.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\CellPhoneNotProvided.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\CellPhoneNotProvidedForText.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\EmailNotProvided.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\EmployeeIdNotProvided.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\HomePhoneNotProvided.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\InvalidEmployee.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\UserNotAuthorized.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\ValueLengthIsMoreThanFieldLength.cs" />
+    <Compile Include="src-server\MyInfoApi\ErrorResponses\WorkPhoneNotProvided.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Commands\ReplaceMyJobPriorities.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\CannotUpdateOrAccessWhenEmployeePreferencesConfiguredToOff.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\JobIdNotAssignedToEmployee.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\CannotBeSameRankForTwoJobs.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\JobIsNotCdmdToSite.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\PastJobsCannotBeRanked.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\CannotRankForTheSameJobId.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\EmployeeCannotRankPrimaryJob.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\JobIdNotValid.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\ErrorResponses\EmployeeIdNotFound.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Mappers\MyJobPrioritiesJobMapper.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Mappers\MyJobPrioritiesJobsMapper.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Mappers\MyJobPrioritiesMapper.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Mappers\MyJobPriorityMapper.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\MyJobPrioritiesApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\MyJobPrioritiesController.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\MyJobPrioritiesOperationFactory.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\OperationCoordinators\GetMyAssignedJobsForPrioritiesCoordinator.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\OperationCoordinators\GetMyJobPrioritiesCoordinator.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\OperationCoordinators\GetMyPriorityByJobIdCoordinator.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\OperationCoordinators\ReplaceMyJobPrioritiesCoordinator.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Queries\GetMyJobPriorities.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Queries\GetMyAssignedJobsForPriorities.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Queries\GetMyPriorityByJobId.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Resources\JobPrioritiesMeta.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Resources\MyJobPrioritiesJobResource.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Resources\MyJobPrioritiesJobsResource.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Resources\MyJobPrioritiesResource.cs" />
+    <Compile Include="src-server\MyJobPrioritiesApi\Resources\MyJobPriorityResource.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotWorkJobAssociatedWithPunch.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotOverlapPreviousPunch.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\DetailMustHaveStartTime.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\GivenMonthIsNotValid.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\GivenYearIsNotValid.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidCalendarDate.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\NoPayPeriodConfigurationForRequestedTimestamp.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchedShiftMappedToExportedSpecialPay.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobIsNotAllowedForRestrictedDepartment.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobRequiredForPunchedShiftStartEdit.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\EmployeeNotAllowedToPunch.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobTransferAtShiftEnd.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchRejectedShiftCannotExceed24Hours.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotModifyDayCutJobTransferStartTime.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobIdRequiredDuringJobTransfer.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchRejectedDuplicatePunch.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchRejectedInvalidDaylightSavings.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\ReasonCodeIsNotValid.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\DetailMapper.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\DetailResource.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\ErrorResponses\GivenMonthIsNotValid.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\ErrorResponses\GivenYearIsNotValid.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsResource.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsMapper.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsCollectionMapper.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsMeta.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsCollectionResource.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsController.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\OperationCoordinators\GetForEntireYearOperationCoordinator.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\OperationCoordinators\GetByYearAndMonthOperationCoordinator.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\Queries\GetForEntireYear.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\Queries\GetByYearAndMonth.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsCollectionsMapper.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\MyScheduleEditsCollectionsResource.cs" />
+    <Compile Include="src-server\MyScheduleEditsApi\ShiftEditActionEnumRegistry.cs" />
+    <Compile Include="src-server\MySchedulesApi\ErrorResponses\CannotUnfillShiftThatHasPunches.cs" />
+    <Compile Include="src-server\MySchedulesApi\ErrorResponses\GivenMonthIsNotValid.cs" />
+    <Compile Include="src-server\MySchedulesApi\ErrorResponses\CannotDeleteShiftThatHasPunches.cs" />
+    <Compile Include="src-server\MySchedulesApi\ErrorResponses\GivenYearIsNotValid.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\PendingEditExistsForScheduledShift.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\PendingEditExistsForScheduledShift.cs" />
+    <Compile Include="src-server\MyTimecardApi\ErrorResponses\GivenMonthIsNotValid.cs" />
+    <Compile Include="src-server\MyTimecardApi\ErrorResponses\GivenYearIsNotValid.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotCancelReadOnlyTimeOffRequest.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestCanNotExceedTimeOffLimit.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotCreateTimeOffRequestWithHiddenTimeOffType.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotEditReadOnlyTimeOffRequest.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotUpdateTimeOffRequestWithHiddenTimeOffType.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\ErrorResponses\PrimaryJobNotAssigned.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\ErrorResponses\PrimaryJobNotAssigned.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\Commands\DisputeScheduledShiftEdit.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\Commands\ApproveScheduledShiftEdit.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotAddOrModifyOrDeleteShiftInPastDays.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotHaveActivityForUnfilledShifts.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotHaveZeroLengthDetail.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleBelowMinHoursBetweenShifts.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleDuringSchoolForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleEarliestStartTimeForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleEmployeeWhoIsNeitherBorrowedNorOwned.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleLatestEndTimeForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxConsecutiveDaysAcrossWeeks.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxConsecutiveDaysAcrossWeeksForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxConsecutiveDaysInWeekForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxConsecutiveDaysPerWeek.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxDaysPerWeek.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxDaysPerWeekForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxHoursPerDay.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxHoursPerDayForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxHoursPerWeek.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotScheduleOverMaxHoursPerWeekForMinor.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CanNotWorkLaborRole.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotWorkSplitShifts.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\DetailsOutOfOrder.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\DetailsOutsideScheduledShift.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\EmployeeCanNotWorkJob.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\EmployeeHasNoStatusForSearchDate.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\EmployeeIsNotActive.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\InvalidReasonType.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\JobIDNotFound.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\JobIsNotAllowedForRestrictedDepartment.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\JobIsNotCdmdToSite.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\LaborRoleIdNotFound.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\LaborRoleIdRequiredForRoleType.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\NoPayPeriodConfigurationForRequestedTimestamp.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ReasonDoesNotExist.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ReasonIdRequired.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ReasonIsNotCDMedToSite.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ReasonIsNotScheduleEditType.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftCannotOverlap.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftCannotOverlapFullDayTOR.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftCannotOverlapPartialTOR.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftJobCannotOverlap.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\EmployeeIdNotFound.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ShiftShouldHaveAtleastOneJob.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ShiftShouldStartAfter24Hours.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\StartMustBeBeforeEnd.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ShiftMustBeLongerThanAbsoluteMinimum.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\InvalidShiftActivityReason.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\UnableToAutoCreateMealsAndBreaks.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\UnsupportedDetailType.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\MinimumShiftQuantityShouldBeOne.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledJobDoesNotExist.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftDoesNotContainsJob.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftEditDoesNotBelongToEmployee.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotModifyScheduledShiftEditNotInPendingStatus.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\CannotModifyWhenScheduledShiftEditApprovalFeatureIsOff.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftDoesNotBelongToSite.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\ErrorResponses\ScheduledShiftNotFound.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\MyScheduledShiftEditsOperationFactory.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\MyScheduledShiftEditsMeta.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\OperationCoordinators\DisputeScheduledShiftEditOperationCoordinator.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\OperationCoordinators\ApproveScheduledShiftEditOperationCoordinator.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\Resources\ScheduleEditMapper.cs" />
+    <Compile Include="src-server\ScheduledShiftEdits\Resources\ScheduleEditResource.cs" />
+    <Compile Include="src-server\MySchedulesApi\ScheduleShiftEditMapper.cs" />
+    <Compile Include="src-server\MySchedulesApi\ScheduleShiftEditResource.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailMapper.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailMeta.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailOperationFactory.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailResource.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\MyTftDetailController.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\OperationCoordinators\GetMyTftDetailsByPayPeriodOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTftDetailsApi\Queries\GetMyTftDetailsByPayPeriod.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Commands\CancelPunchEdits.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Commands\ModifyPunchEdits.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Commands\CreatePunchEdits.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchAddsNotAllowed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\StartMustBeBeforeEnd.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobTransfersOutOfOrder.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\DetailsOutOfOrder.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobTransferOverlapsDetail.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\DetailEndPunchMustBeAfterDetailStartPunch.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotHaveZeroLengthPunchedShiftOrPunchDetails.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\JobTransferOutsidePunchedShift.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\DetailsOutsidePunchedShift.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\MultiplePunchedShiftEndsNotAllowed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchEditsNotAllowed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchAddEditsNotAllowed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\NoPendingEditsExistsToCancel.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidPunchedShiftId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidMyPunchEditId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchedShiftDoesNotBelongToEmployee.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotAddPunchedShiftStart.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PayPeriodIsClosed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CurrentAndFutureDatedEditsAreNotAllowed.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidPunchId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotEditApprovedPunchOperation.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotEditExpiredPunchOperation.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CannotEditCancelledPunchOperation.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PendingPunchEditRequestExistsForThePunchedShift.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\MyPunchEditsCommentOver255Characters.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidApprovalCode.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidEmployee.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidStatusCode.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\PunchEditApprovalIdDoesNotExist.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\MyPunchEditsController.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\ModifyPunchEditsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\CreatePunchEditsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetAllEditsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetByPunchEditIdOperatorCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetEditsByPunchedShiftIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetEditsByYearMonthOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetEditsByLaborWeekOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\CancelPunchEditsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetByPunchEditId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetAllEditsByPunchedShiftId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetAllEditsByYearAndMonth.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetAllEditsByLaborWeek.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\MyPunchEditsCollectionResource.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\MyPunchEditsCollectionMapper.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchOperationsMapper.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\MyPunchEditsResource.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\MyPunchEditsMapper.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchOperationsResource.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\ClockExceptionCode.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\ProcessedExceptionCode.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\SelfPunchOverrideCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\SelfPunchOverrideCode.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\RawPunchStatusCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\RawPunchStatusCode.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\PunchOverrideCode.cs" />
+    <Compile Include="src-server\Common\Enums\PunchTypeCodes.cs" />
+    <Compile Include="src-server\Common\ErrorResponses\StringCouldNotBeConvertedToInt.cs" />
+    <Compile Include="src-server\DataTransferObjects\DepartmentPostedTimeStamp.cs" />
+    <Compile Include="src-server\DataTransferObjects\AssignedJobInfo.cs" />
+    <Compile Include="src-server\FeatureConfigApi\ErrorResponses\InvalidSecurityGroup.cs" />
+    <Compile Include="src-server\FeatureConfigApi\ErrorResponses\InvalidSite.cs" />
+    <Compile Include="src-server\FeatureConfigApi\ErrorResponses\OrgHierarchyIdCouldNotBeConvertedToInt.cs" />
+    <Compile Include="src-server\FeatureConfigApi\ErrorResponses\SecurityGroupIdCouldNotBeConvertedToInt.cs" />
+    <Compile Include="src-server\FeatureConfigApi\OperationCoordinators\GetByOrgUnitAndSecurityGroupOc.cs" />
+    <Compile Include="src-server\FeatureConfigApi\OperationCoordinators\GetByNameOperationCoordinator.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Queries\GetByOrgUnitAndSecurityGroup.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigCollectionMeta.cs" />
+    <Compile Include="src-server\MyAccrualsApi\MyAccrualsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyAccrualsApi\MyAccrualsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyAccrualsApi\MyAccrualsController.cs" />
+    <Compile Include="src-server\MyAccrualsApi\OperationCoordinators\GetAllAccuralsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAccrualsApi\OperationCoordinators\GetByBusinessDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Queries\GetByBusinessDate.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Resource\MyAccrualsCollectionMapper.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Resource\MyAccrualsCollectionMeta.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Resource\MyAccrualsCollectionResource.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Resource\MyAccrualsMapper.cs" />
+    <Compile Include="src-server\MyAccrualsApi\Resource\MyAccrualsResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityCannotBeBeforeMinDaysInAdvance2.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EndTimeOffsetMustBeValid.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\InvalidAvailabilityRequestId.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\PreferredShouldBeWithinGeneral.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\StartTimeOffsetMustBeValid.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityType.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityTypeEnumRegistry.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GetAllByLaborWeekOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GetByCalendarDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Queries\GetAllByLaborWeek.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Queries\GetDefaultByDate.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestRangeMapper.cs" />
+    <Compile Include="src-server\AvailabilityRequestRange\AvailabilityRequestRangeMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestRangeResource.cs" />
+    <Compile Include="src-server\AvailabilityRequestRange\AvailabilityRequestRangeResource.cs" />
+    <Compile Include="src-server\Common\IApiResource.cs" />
+    <Compile Include="src-server\Common\Enums\SwapShiftRequestStatus.cs" />
+    <Compile Include="src-server\Common\Enums\ShiftTypeStatus.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityRequestStatusCode.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Commands\CreateMyAvailabilityRequest.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Commands\UpdateMyAvailabilityRequest.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityCannotBeBeforeMinDaysInAdvance.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityCannotBeDuringPostedWeek.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityCannotHaveSameKey.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityOverlapping.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityPreferredAvailabilityMustBeContainedInGeneral.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityTimeRangesShouldBeIn15MinutesIncrement.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityWeekNumberExceedsCycleLength.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\AvailabilityWeekNumberLessThan1.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\CannotOverlapEffDates.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EffEndMustBeAfterEffStart.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EmployeeAvailabilityCycleBaseDateMustNotBeLaterThanStartDateRule.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EmployeeAvailabilityEffectiveDateShouldNotExceed365Days.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EmployeeIsRequired.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\EmployeeMustHaveAHomeSiteDuringEmployeeAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftCannotBe24HoursOrMore.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftCannotHaveSameKey.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftCannotStartOnNextDay.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftMustBeWithinGeneralAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftNoMoreThanTwoStartingOnSameDay.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftNonAdjacentJobsSegments.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftOverlapping.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftWeekNumberExceedsCycleLength.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\FixedShiftWeekNumberLessThan1.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\HomeSiteMustHaveAPayPeriodForStartOfEmployeeAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\ErrorResponses\NumberOfWeeksMustBeBetween1And10.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityController.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityApiOperationFactory.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\MyAvailabilityStatusCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\AddAvailabilityRequestCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GenerateDefaultOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GetByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\GetMyAvailabilityOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\OperationCoordinators\UpdateAvailabilityRequestCoordinator.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Queries\GetAll.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Commands\GenerateDefault.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Queries\GetById.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Queries\GetMyAvailability.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\EmployeeAvailabilityMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityMeta.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestCollectionMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestCollectionResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestMeta.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\AvailabilityRequest\MyAvailabilityRequestResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityCollectionResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\EmployeeAvailabilityResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\Availability\MyAvailabilityResource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestDiagnosticHandler.cs" />
+    <Compile Include="Services\BusinessUnit.asmx.cs">
+      <DependentUpon>BusinessUnit.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\Diagnostics.asmx.cs">
+      <DependentUpon>Diagnostics.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\Employee.asmx.cs">
+      <DependentUpon>Employee.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src-server\AdjustmentCategory\AdjustmentCategoryResource.cs" />
+    <Compile Include="src-server\AdjustmentCategory\AdjustmentCategoryMapper.cs" />
+    <Compile Include="src-server\Application\BusinessUnitHelper.cs" />
+    <Compile Include="src-server\FeatureConfigApi\FeatureConfigApiOperationFactory.cs" />
+    <Compile Include="src-server\FeatureConfigApi\FeatureConfigsController.cs" />
+    <Compile Include="src-server\FeatureConfigApi\FeatureConfigApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\FeatureConfigApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Queries\GetByAll.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Queries\GetByName.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigCollectionMapper.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigCollectionResource.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigMapper.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigMeta.cs" />
+    <Compile Include="src-server\FeatureConfigApi\Resources\FeatureConfigResource.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\DefaultAvailabilityRequest\DefaultAvailabilityRequestCollectionMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\DefaultAvailabilityRequest\DefaultAvailabilityRequestMapper.cs" />
+    <Compile Include="src-server\MyAvailabilityApi\Resource\DefaultAvailabilityRequest\DefaultAvailabilityRequestRangeMapper.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\Command\ClaimAvailableShift.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\GivenMonthIsNotValid.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\ErrorResponses\InvalidShift.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftMapper.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftMeta.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftResource.cs" />
+    <Compile Include="src-server\Common\ApiException.cs" />
+    <Compile Include="src-server\Common\ApiExceptionArgument.cs" />
+    <Compile Include="src-server\Common\ApiExceptionArgumentKeys.cs" />
+    <Compile Include="src-server\Common\ApiExceptionCodes.cs" />
+    <Compile Include="src-server\Common\ApiOperationResult.cs" />
+    <Compile Include="src-server\Common\ApiOperationsFactory.cs" />
+    <Compile Include="src-server\Common\ApiOperationStatusCode.cs" />
+    <Compile Include="src-server\Common\ApiProtocolEnforcerV1BetaX.cs" />
+    <Compile Include="src-server\Common\BaseEssApiController.cs" />
+    <Compile Include="src-server\Common\BatchEndpointResponse.cs" />
+    <Compile Include="src-server\Common\EnumRegistry.cs" />
+    <Compile Include="src-server\Common\Enums\ResourceHelperErrorCodes.cs" />
+    <Compile Include="src-server\Common\ErrorResponsesAttribute.cs" />
+    <Compile Include="src-server\Common\ExceptionArgumentTranslator.cs" />
+    <Compile Include="src-server\Common\ExceptionRegistrations.cs" />
+    <Compile Include="src-server\Common\ExceptionRegistry.cs" />
+    <Compile Include="src-server\Common\ExtraDocumentationAttribute.cs" />
+    <Compile Include="src-server\Common\GenericNotFoundErrorContainer.cs" />
+    <Compile Include="src-server\Common\GenericUriIDDoesNotMatchResourceIDErrorContainer.cs" />
+    <Compile Include="src-server\Common\IApiCollectionResource.cs" />
+    <Compile Include="src-server\Common\IApiCommand.cs" />
+    <Compile Include="src-server\Common\IApiException.cs" />
+    <Compile Include="src-server\Common\IApiExceptionArgument.cs" />
+    <Compile Include="src-server\Common\IApiGettableResource.cs" />
+    <Compile Include="src-server\Common\IApiGettableResourceV1.cs" />
+    <Compile Include="src-server\Common\IApiOperation.cs" />
+    <Compile Include="src-server\Common\IApiOperationCoordinator.cs" />
+    <Compile Include="src-server\Common\IApiProtocolEnforcerV1BetaX.cs" />
+    <Compile Include="src-server\Common\IApiQuery.cs" />
+    <Compile Include="src-server\Common\IBatchResourceApiCommand.cs" />
+    <Compile Include="src-server\Common\IBatchResourceApiQuery.cs" />
+    <Compile Include="src-server\Common\ICollectionResourceApiCommand.cs" />
+    <Compile Include="src-server\Common\ICollectionResourceApiQuery.cs" />
+    <Compile Include="src-server\Common\ICollectionResourceQueryOperationCoordinator.cs" />
+    <Compile Include="src-server\Common\IErrorResponse.cs" />
+    <Compile Include="src-server\Common\IEssApiException.cs" />
+    <Compile Include="src-server\Common\IMapper.cs" />
+    <Compile Include="src-server\Common\IMeta.cs" />
+    <Compile Include="src-server\Common\IMetaGettable.cs" />
+    <Compile Include="src-server\Common\ISingleResourceApiCommand.cs" />
+    <Compile Include="src-server\Common\ISingleResourceApiQuery.cs" />
+    <Compile Include="src-server\Common\ISingleResourceCommandOperationCoordinator.cs" />
+    <Compile Include="src-server\Common\ISingleResourceQueryOperationCoordinator.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorBase.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorCreateSingle.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorDeleteSingle.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorReadCollection.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorReadSingle.cs" />
+    <Compile Include="src-server\Common\OperationsCoordinatorUpdateSingle.cs" />
+    <Compile Include="src-server\Common\ProtocolEnforcerErrorCodes.cs" />
+    <Compile Include="src-server\Common\RequiredEnumAttribute.cs" />
+    <Compile Include="src-server\Common\ResourceHelper.cs" />
+    <Compile Include="src-server\Helpers\FreeTextHelper.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\ApiThrowUnitOfWorkErrorByParameter.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetCustomApplicationExceptionOnSingleResourceCreate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetCustomApplicationExceptionOnSingleResourceDelete.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetCustomApplicationExceptionOnSingleResourceUpdate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetDomainExceptionOnSingleResourceUpdate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetDomainOperationExceptionOnSingleResourceCreate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetDomainOperationExceptionOnSingleResourceDelete.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetExceptionOnSingleResourceCreate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetExceptionOnSingleResourceDelete.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Commands\GetExceptionOnSingleResourceUpdate.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticApiOperationFactory.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticCollectionResource.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticError.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticMethodCollectionResource.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticResource.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticsController.cs" />
+    <Compile Include="src-server\DiagnosticsApi\DiagnosticsMapper.cs" />
+    <Compile Include="src-server\DiagnosticsApi\ErrorResponses\DiagnosticCustomApplicationException.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\ApiThrowUnitOfWorkErrorByParameterOperationsCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetCustomApplicationExceptionOnCollectionResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetCustomApplicationExceptionOnSingleResourceDeleteOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetCustomApplicationExceptionOnSingleResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetCustomApplicationExceptionOnSingleResourceUpdateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetCustomApplicationExceptionOnSingResourceCreateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDiagnosticExceptionOnCollectionResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDiagnosticExceptionOnSingleResourceCreateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDiagnosticExceptionOnSingleResourceDeleteOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDiagnosticExceptionOnSingleResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDiagnosticExceptionOnSingleResourceUpdateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDomainExceptionOnSingleResourceUpdateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDomainOperationExceptionOnCollectionResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDomainOperationExceptionOnSingleResourceCreateOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDomainOperationExceptionOnSingleResourceDeleteOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\OperationCoordinators\GetDomainOperationExceptionOnSingleResourceReadOperationCoordinator.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetCustomApplicationExceptionOnCollectionResourceRead.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetCustomApplicationExceptionOnSingleResourceRead.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetDiagnosticExceptionOnCollectionResourceRead.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetDiagnosticExceptionOnSingleResourceRead.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetDomainOperationExceptionOnCollectionResourceRead.cs" />
+    <Compile Include="src-server\DiagnosticsApi\Queries\GetDomainOperationExceptionOnSingleResourceRead.cs" />
+    <Compile Include="src-server\ErrorLogging\WfmEssApiAspNetErrorLoggingFilter.cs" />
+    <Compile Include="src-server\Helpers\ErrorMessage.cs" />
+    <Compile Include="src-server\Common\Resources\Job\JobMapper.cs" />
+    <Compile Include="src-server\Common\Resources\Job\JobResource.cs" />
+    <Compile Include="src-server\LinkCollection.cs" />
+    <Compile Include="src-server\Common\OverridenWebApiDependencyResolver.cs" />
+    <Compile Include="src-server\Common\RequiresModelValidationAttribute.cs" />
+    <Compile Include="src-server\Common\ResourceCanNotBeNullAttribute.cs" />
+    <Compile Include="src-server\Common\EssApiErrorContainer.cs" />
+    <Compile Include="src-server\Common\EssApiException.cs" />
+    <Compile Include="src-server\Common\TaskError.cs" />
+    <Compile Include="src-server\Helpers\EnumHelper.cs" />
+    <Compile Include="src-server\Helpers\LinkHelper.cs" />
+    <Compile Include="src-server\Link.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\OperationCoordinators\ClaimOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\OperationCoordinators\GetByCalendarDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\Queries\GetByCalendarDate.cs" />
+    <Compile Include="src-server\MyCallOffApi\Command\CreateMyCallOff.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\EmployeeIsNotAllowedToCallOff.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\MaxHoursInAdvanceForCallOff.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ReasonIsNotValidOrCdmedToSite.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ReasonShouldBeCallOffType.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ScheduledShiftBelongsOtherEmployee.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ScheduleShiftIsNotPosted.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ScheduleShiftIsUnfilled.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\ScheduleShiftShouldBeValid.cs" />
+    <Compile Include="src-server\MyCallOffApi\ErrorResponses\TimeOffNotAllowedForUser.cs" />
+    <Compile Include="src-server\MyCallOffApi\MyCallOffApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyCallOffApi\MyCallOffApiOperationFactory.cs" />
+    <Compile Include="src-server\MyCallOffApi\MyCallOffController.cs" />
+    <Compile Include="src-server\MyCallOffApi\MyCallOffMapper.cs" />
+    <Compile Include="src-server\MyCallOffApi\MyCallOffResource.cs" />
+    <Compile Include="src-server\MyCallOffApi\OperationCoordinators\CreateMyCallOffCoordinator.cs" />
+    <Compile Include="src-server\MyCallOffApi\Resource\Availability\MyCallOffMeta.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\MyGoodFaithEstimateApiOperationFactory.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\MyGoodFaithEstimateApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\MyGoodFaithEstimateController.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\OperationCoordinators\GetMyGoodFaithEstimateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\Queries\GetMyGoodFaithEstimate.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\Resource\MyGoodFaithEstimateMapper.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\Resource\MyGoodFaithEstimateMeta.cs" />
+    <Compile Include="src-server\MyGoodFaithEstimateApi\Resource\MyGoodFaithEstimateResource.cs" />
+    <Compile Include="src-server\MyHealthApi\Commands\AddMyHealth.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\EmployeeDoesNotBelongsToGivenSite.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\EmployeeHealthCommentsAreTooLong.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\EmployeeHealthTemperatureisNotValid.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\EmployeeNotFound.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\ReasondoesNotBelongsToEmployeeHealthReasonType.cs" />
+    <Compile Include="src-server\MyHealthApi\ErrorResponses\ReasonIsNotValid.cs" />
+    <Compile Include="src-server\MyHealthApi\MyHealthApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyHealthApi\MyHealthController.cs" />
+    <Compile Include="src-server\MyHealthApi\MyHealthOperationFactory.cs" />
+    <Compile Include="src-server\MyHealthApi\OperationCoordinators\GetMyHealthByCalendarDateCoordinator.cs" />
+    <Compile Include="src-server\MyHealthApi\OperationCoordinators\GetMyHealthByLaborWeekCoordinator.cs" />
+    <Compile Include="src-server\MyHealthApi\OperationCoordinators\AddMyHealthCoordinator.cs" />
+    <Compile Include="src-server\MyHealthApi\Queries\GetMyHealthByCalendarDate.cs" />
+    <Compile Include="src-server\MyHealthApi\Queries\GetMyHealthByLaborWeek.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthInLaborWeekResourceMapper.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthCollectionMeta.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthInLaborWeekResource.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthResourceMapper.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthMeta.cs" />
+    <Compile Include="src-server\MyHealthApi\Resources\MyHealthResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Commands\UpdateMyInfo.cs" />
+    <Compile Include="src-server\MyInfoApi\OperationCoordinators\UpdateMyInfoOperationCoordinator.cs" />
+    <Compile Include="src-server\MyJobsApi\ErrorResponses\EmployeeIsNotAssignedToSiteOnDate.cs" />
+    <Compile Include="src-server\MyJobsApi\ErrorResponses\SiteDoesNotExist.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsCollectionMapper.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsCollectionMeta.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsCollectionResource.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsController.cs" />
+    <Compile Include="src-server\MyJobsApi\MyJobsMapper.cs" />
+    <Compile Include="src-server\MyJobsApi\OperationCoordinators\GetMyJobsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyJobsApi\Queries\GetMyJobs.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailMessageResource.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailApiOperationFactory.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailCollectionMapper.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailController.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailMapper.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailCollectionMeta.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailCollectionResource.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailMeta.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailResource.cs" />
+    <Compile Include="src-server\MyMailApi\MyMailMessageParameterResource.cs" />
+    <Compile Include="src-server\MyMailApi\OperationCoordinators\GetTopMailOperationCoordinator.cs" />
+    <Compile Include="src-server\MyMailApi\Queries\GetTopMail.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Commands\UpdatePunchEdit.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\CommentOver255Characters.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\ErrorResponses\InvalidData.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\MyPunchEditsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\MyPunchEditApprovalsController.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\MyPunchEditsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetByLaborWeekOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\GetByIdOperatorCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\OperationCoordinators\UpdateEditOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetByAll.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetByLaborWeek.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Queries\GetByPunchId.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchEditApprovalsCollectionMapper.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchEditApprovalsCollectionResource.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchEditApprovalMapper.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchEditsMeta.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\PunchEditApprovalResource.cs" />
+    <Compile Include="src-server\MyPunchEditsApi\Resources\ApprovalStatusUpdateResource.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesApiOperationFactory.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesCollectionMapper.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesCollectionMeta.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesCollectionResource.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesController.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesMapper.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\MyPunchTypesResource.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\OperationCoordinators\GetMyPunchTypesOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\PunchTypeResource.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\PunchTypeResourceMapper.cs" />
+    <Compile Include="src-server\MyPunchTypesApi\Queries\GetMyPunchTypes.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Commands\CancelUserDisabledPreference.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Commands\CreateUserDisabledPreference.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\ErrorResponses\PreferenceDoesNotExist.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\ErrorResponses\PreferenceDoExist.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\ErrorResponses\InvalidTopic.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\ErrorResponses\InvalidUser.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\MyPushMsgPreferenceApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\MyPushMsgPreferenceApiOperationFactory.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\MyPushNotificationPreferencesController.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\OperationCoordinators\CancelDisabledPreferenceOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\OperationCoordinators\CreateDisabledPreferenceOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\OperationCoordinators\GetPushMsgTopicsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\OperationCoordinators\GetPushMsgPreferencesOperationCoordinator.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Queries\GetPushMsgTopics.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Queries\GetMyPreferences.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\MyPushMsgPreferenceCollectionMapper.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\MyPushMsgPreferenceMeta.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\MyPushNotificationPreferenceCollectionResource.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\MyPushMsgPreferenceMapper.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\MyPushNotificationPreferenceResource.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\PushMsgTopicCollectionMapper.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\PushMsgTopicCollectionResource.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\PushMsgTopicMapper.cs" />
+    <Compile Include="src-server\MyPushNotificationPreferencesApi\Resource\PushMsgTopicResource.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Commands\AddNewRawPunch.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\ProcessedExceptionCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\PunchOverrideCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\ClockExceptionCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\Enums\PunchTypeCodeEnumRegistry.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\EmployeeSelfPunchCannotHaveManagerOverride.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\EmployeeSelfPunchTimeStampIsNotValid.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\EmployeeNotActive.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidBadgeNumber.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidEmployee.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\AllowSelfPunchSiteSettingIsDisabled.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidJob.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidScheduledShiftId.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\ScheduledShiftDoesNotBelongToEmployee.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidSite.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\InvalidWorkedSite.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\ErrorResponses\JobIdRequiredDuringJobTransfer.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\MyRawPunchesController.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\MyRawPunchesOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\MyRawPunchesApiOperationFactory.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\OperationCoordinators\AddNewRawPunchOperationCoordinator.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\RawPunchMapper.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\RawPunchMeta.cs" />
+    <Compile Include="src-server\MyRawPunchesApi\RawPunchResource.cs" />
+    <Compile Include="src-server\MySchedulesApi\MySchedulesApiOperationFactory.cs" />
+    <Compile Include="src-server\MySchedulesApi\MyScheduleDayResource.cs" />
+    <Compile Include="src-server\MySchedulesApi\MyScheduleDaysMapper.cs" />
+    <Compile Include="src-server\MySchedulesApi\MyScheduleMapper.cs" />
+    <Compile Include="src-server\MySchedulesApi\MyScheduleMeta.cs" />
+    <Compile Include="src-server\MySchedulesApi\MyScheduleResource.cs" />
+    <Compile Include="src-server\MySchedulesApi\MySchedulesApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MySchedulesApi\MySchedulesController.cs" />
+    <Compile Include="src-server\MySchedulesApi\OperationCoordinators\GetByCalendarDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MySchedulesApi\OperationCoordinators\GetByYearAndMonthOperationCoordinator.cs" />
+    <Compile Include="src-server\MySchedulesApi\Queries\GetByCalendarDate.cs" />
+    <Compile Include="src-server\MySchedulesApi\Queries\GetByYearAndMonth.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftsCollectionResource.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftsController.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\MyAvailableShiftsCollectionMapper.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\OperationCoordinators\GetByYearAndMonthOperationCoordinator.cs" />
+    <Compile Include="src-server\MyAvailableShiftsApi\Queries\GetByYearAndMonth.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\MyEmploymentDetailsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\MyEmploymentDetailsController.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\MyEmploymentDetailsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\OperationCoordinators\GetMyEmploymentDetailsOperationCoordinator.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\Queries\GetMyEmploymentDetails.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\Resources\MyEmploymentDetailsMapper.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\Resources\MyEmploymentDetailsMeta.cs" />
+    <Compile Include="src-server\MyEmploymentDetailsApi\Resources\MyEmploymentDetailsResource.cs" />
+    <Compile Include="src-server\MyInfoApi\MyInfoApiOperationFactory.cs" />
+    <Compile Include="src-server\MyInfoApi\MyInfoController.cs" />
+    <Compile Include="src-server\MyInfoApi\MyInfoApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyInfoApi\OperationCoordinators\GetMyInfoOperationCoordinator.cs" />
+    <Compile Include="src-server\MyInfoApi\Queries\GetMyInfo.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyContactMethodPreferenceMapper.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyContactMethodPreferenceResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyEmployeeNotificationPreferenceMapper.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyEmployeeNotificationPreferenceResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyAddressMapper.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyCountryMapper.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyStateResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyCountryResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyAddressResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyInfoMapper.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyInfoMeta.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyInfoResource.cs" />
+    <Compile Include="src-server\MyInfoApi\Resources\MyStateMapper.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Commands\UpdateShiftOffer.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\EmployeeCannotCancelOfferedShift.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\EmployeeCannotOfferShift.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\FeatureIsNotConfiguredForEmployee.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\InvalidEmployee.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\ScheduledShiftDoesNotExist.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\ShiftHasAlreadyBeenOffered.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\ErrorResponses\ShiftIsNotOffered.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\MyShiftOffersController.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\MyShiftsOffersApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\OperationCoordinators\GetByShiftIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\OperationCoordinators\GetByDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\OperationCoordinators\CancelShiftOfferOperationCoordinator.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\OperationCoordinators\MakeShiftOfferOperationCoordinator.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Queries\GetByShiftId.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Queries\GetByCalendarDate.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOfferCollectionMapper.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOfferMapper.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOfferMeta.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOfferDto.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOfferResource.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\Resource\ShiftOffersCollectionResource.cs" />
+    <Compile Include="src-server\MyShiftOfferApi\MyShiftOffersApiOperationFactory.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\ErrorResponses\NoOpenPayPeriod.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\MySitePayPeriodSummaryApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\MySitePayPeriodSummaryApiOperationFactory.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\MySitePayPeriodSummaryController.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\OperationCoordinator\GetSitePayPeriodSummaryOperationCoordinator.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\Queries\GetSitePayPeriodSummary.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\Resource\MySitePayPeriodSummaryMapper.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\Resource\MySitePayPeriodSummaryMeta.cs" />
+    <Compile Include="src-server\MySitePayPeriodSummaryApi\Resource\MySitePayPeriodSummaryResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Command\CancelSwapRequest.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Command\UpdateSwapShiftRequest.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\FixedShiftCanNotBeSwapped.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\InvalidAction.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\InvalidActionNotTheRecipient.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\InvalidActionNotTheSender.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\InvalidSwapShiftRequestId.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\OriginalShiftDoesNotBelongToEmployee.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\OriginalShiftIsNotAValidShift.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\OriginalShiftIsNotInAvailableSwapWindow.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\RequestedShiftDoesNotBelongToEmployee.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\RequestedShiftIsNotAValidShift.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\RequestedShiftStateInvalid.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\ErrorResponses\ShiftHasBeenTaken.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\MySwapShiftsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\MySwapShiftsApiOperationFactory.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\MySwapShiftsController.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\AddSwapShiftRequestOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\CancelSwapRequestOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\GetPendingApprovalsOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\GetSwapShiftsRequestedByMeOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\GetAvailableSwapShiftsOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\OperationCoordinators\UpdateSwapShiftRequestOperationCoordinator.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Queries\GetPendingApprovals.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Queries\GetSwapShiftsRequestedByMe.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Queries\GetAvailableSwapShifts.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AddSwapShiftRequest\AddSwapShiftRequestMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AvailableSwapShifts\SwappableShiftCollectionMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AvailableSwapShifts\SwappableShiftCollectionResource .cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AvailableSwapShifts\SwappableshiftMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AvailableSwapShifts\SwappableShiftMeta.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\AvailableSwapShifts\SwappableShiftResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Command\AddSwapShiftRequest.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftMeta.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapRequestResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\ExistingShiftResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftsPendingApprovals\SwapShiftPendingApprovalCollectionMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftsPendingApprovals\SwapShiftPendingApprovalCollectionResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftsPendingApprovals\SwapShiftPendingApprovalMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftsPendingApprovals\SwapShiftPendingApprovalMeta.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftsPendingApprovals\SwapShiftPendingApprovalResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftRequestsByMe\RequestedByMeCollectionMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftRequestsByMe\SwapShiftRequestCollectionResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftRequestsByMe\SwapShiftRequestMapper.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftRequestsByMe\SwapShiftRequestResource.cs" />
+    <Compile Include="src-server\MySwapShiftsApi\Resources\SwapShiftDtoMapper.cs" />
+    <Compile Include="src-server\MyTimecardApi\ErrorResponses\InvalidCalendarDate.cs" />
+    <Compile Include="src-server\MyTimecardApi\ErrorResponses\NoPayPeriodConfigurationForRequestedTimestamp.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardDayMapper.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardMapper.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardMeta.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardsController.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardDayResource.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimecardApi\MyTimecardResource.cs" />
+    <Compile Include="src-server\MyTimecardApi\OperationCoordinators\GetByCalendarDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimecardApi\OperationCoordinators\GetByYearAndMonthOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimecardApi\Queries\GetByCalendarDate.cs" />
+    <Compile Include="src-server\MyTimecardApi\Queries\GetByYearAndMonth.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Enums\PayOutGroupCode.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Enums\PayOutGroupEnumRegistry.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\MyTimecardPayOutSummaryApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\MyTimecardPayOutSummaryApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\MyTimecardPayOutSummaryController.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\OperationCoordinators\GetByDatePayOutSummaryOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Queries\GetByDatePayOutSummary.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Resources\MyTimecardPayOutSummaryCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Resources\MyTimecardPayOutSummaryCollectionResource.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Resources\MyTimecardPayOutSummaryMapper.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Resources\MyTimecardPayOutSummaryMeta.cs" />
+    <Compile Include="src-server\MyTimecardPayOutSummaryApi\Resources\MyTimecardPayOutSummaryResource.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\MyTimecardPaySummaryApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\MyTimecardPaySummaryApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\MyTimecardPaySummaryController.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\OperationCoordinators\GetByDatePaySummaryOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Queries\GetByDatePaySummary.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Resources\MyTimecardPaySummaryCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Resources\MyTimecardPaySummaryCollectionResource.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Resources\PaySummaryDto.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Resources\MyTimecardPaySummaryMeta.cs" />
+    <Compile Include="src-server\MyTimecardPaySummaryApi\Resources\MyPaySummaryResource.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Commands\CreateMyTimeOff.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Commands\UpdateById.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AdjustmentMappedToExportedSpecialPay.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AdjustmentMappedToSpecialPay.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\EmployeeAccrualBalanceViolationOnUpdateInDays.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\EmployeeAccrualBalanceViolationOnUpdateInHours.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsErrorThresholdAmount.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsErrorThresholdHour.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsErrorThresholdQuantity.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsWarningThresholdAmount.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsWarningThresholdHour.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\ExceedsWarningThresholdQuantity.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffTypeNotAllowedForUser.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AuditReasonIdShouldBeOfBackPayType.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffIdCouldNotConvertToLong.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestIsStale.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CommentExceeds255Characters.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\StartMustBeBeforeEnd.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\BackPayMappingsAreNotRequired.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\BackPayMappingsAreRequired.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\BackPayMappingsShouldBeProvidedForExistingAndChangedAdjustmentTypes.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffTypeIdCouldNotBeConvertedToInt.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AuditReasonIsNotFound.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AuditReasonIsRequired.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\AuditReasonIsNotRequired.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotChangeApprovedTorStatusInClosePayPeriod.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotUpdateTimeOffRequestInClosedPayPeriodWhenCurrentStatusNotEqualToApproved.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestRangeShouldBeWithinHomeSiteAssignmentRange.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotAddOrEditTimeOffRequestInAClosedPayPeriod.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestDatesCannotBeEditedWhenItCreatedThroughCallOff.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotApproveOrModifyTorThatOverlapsTransferDate.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotModifyOwnRequestNotInPendingStatus.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotCancelOwnPastTimeOffRequest.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\MinTimeInAdvanceForSelf.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\EmployeeAccrualBalanceViolationInDays.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\EmployeeAccrualBalanceViolationInHours.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\EmployeeAccrualBalanceViolationForSelf.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffBlackoutPeriodOverlap.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffBlackoutPeriodOverlapForSelf.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestLongerThan365Days.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestLongerThanClientSetting.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestLongerThanClientSettingForSelf.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestHalfDayHoursCannotBeUsedForMultiDayTimeOffRequests.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestCannotHaveAZeroLength.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestCannotOverlapExistingTimeOffRequestForSingleDay.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestCannotOverlapExistingTimeOffRequestForMultipleDay.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotApproveTimeOffRequestWithoutTimeOffType.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestDatesCannotBeEditedToFallInClosedPayPeriod.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\TimeOffRequestDatesInClosePayPeriodAreNotEditable.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotEditTimeOffRequestWhichStartsAndEndsInAClosedPayPeriod.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotEditTimeOffRequestInAClosedPayPeriod.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotChangeAllDayPartialDayWhenStartIsInClosedPayPeriodOrBeforeCurrentBusinessDate.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotAddRequestForInactiveEmployee.cs" />
+    <Compile Include="src-server\MyTimeOffApi\ErrorResponses\CannotAddRequestForEmployeeBeforeHire.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\CreateMyTimeOffCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Commands\CancelById.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\CancelByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\GetByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\UpdateByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Queries\GetById.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\MyTimeOffTypeAccrualBalanceApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\MyTimeOffTypeAccrualBalanceApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\MyTimeOffTypeAccrualBalancesController.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\OperationCoordinators\GetByDateOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\Queries\GetByDate.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\Resources\MyTimeOffTypeAccrualBalanceCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\Resources\MyTimeOffTypeAccrualBalanceCollectionResource.cs" />
+    <Compile Include="src-server\MyTimeOffTypeAccrualBalanceApi\Resources\MyTimeOffTypeAccrualBalanceMeta.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\MyTimeOffTypesApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\MyTimeOffTypesApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\MyTimeOffTypesController.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\OperationCoordinators\GetByNoCalendarDateOperatorCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\OperationCoordinators\GetByCalendarDateOperatorCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\Queries\GetByDate.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\Resources\MyTimeOffTypesCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\Resources\MyTimeOffTypesCollectionResource.cs" />
+    <Compile Include="src-server\MyTimeOffTypesApi\Resources\MyTimeOffTypesCollectionMeta.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffMeta.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffResource.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffMapper.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffPast30DaysCollectionResource.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffPast30DaysCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffPast30DaysCollectionMeta.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffUpcomingCollectionMeta.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffUpcomingCollectionMapper.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffUpcomingCollectionResource.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffController.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\GetPast30DaysOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\OperationCoordinators\GetUpcomingOperationCoordinator.cs" />
+    <Compile Include="src-server\MyTimeOffApi\MyTimeOffApiOperationFactory.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Queries\GetPast30Days.cs" />
+    <Compile Include="src-server\MyTimeOffApi\Queries\GetUpcoming.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\Queries\GetAllUnpairedPunches.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesCollectionMapper.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesCollectionResource.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesMapper.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesCollectionMeta.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchResource.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesApiOperationFactory.cs" />
+    <Compile Include="src-server\MyUnpairedPunchesApi\MyUnpairedPunchesController.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Command\AcceptVoluntaryTimeOff.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Command\DeclineVoluntaryTimeOff.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Enums\MyVoluntaryTimeOffStatus.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffFeatureIsDisabled.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffHasAlreadyBeenRecalled.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffHasAlreadyBeenExpired.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffHasAlreadyBeenCancelled.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffHasAlreadyBeenDeclined.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffIdInvalidOrNotFound.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffInvalidAsScheduledShiftHasStarted.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffInvalidAsScheduledShiftHasPunches.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffInvalidAsScheduledShiftWasModified.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\ValidAdjustmentCategoryRequired.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffHasAlreadyBeenAccepted.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\ErrorResponses\VoluntaryTimeOffQuantitySentLimitReached.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffCollectionMapper.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffCollectionMeta.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffCollectionResource.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffMapper.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffMeta.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffResource.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffsApiOperationFactory.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\MyVoluntaryTimeOffsController.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\OperationCoordinators\AcceptOperationCoordinator.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\OperationCoordinators\DeclineOperationCoordinator.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\OperationCoordinators\GetAllByLaborWeekOperationCoordinator.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\OperationCoordinators\GetByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Queries\GetAll.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Queries\GetAllByLaborWeek.cs" />
+    <Compile Include="src-server\MyVoluntaryTimeOffsApi\Queries\GetById.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\MyWeeklyDataApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\MyWeeklyDataController.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\MyWeeklyDataOperationFactory.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\OperationCoordinators\GetMyWeeklyDataOperatorCoordinator.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\Queries\GetMyWeeklyDataQuery.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\Resource\MyWeeklyDataDto.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\Resource\MyWeeklyDataMapper.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\Resource\MyWeeklyDataMeta.cs" />
+    <Compile Include="src-server\MyWeeklyDataApi\Resource\MyWeeklyDataResource.cs" />
+    <Compile Include="src-server\OrgUnitsApi\OperationCoordinators\GetOrgUnitsOperationCoordinator.cs" />
+    <Compile Include="src-server\OrgUnitsApi\OrgUnitsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\OrgUnitsApi\OrgUnitsApiOperationFactory.cs" />
+    <Compile Include="src-server\OrgUnitsApi\OrgUnitsController.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Queries\GetAssignedOrgUnits.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitsCollectionMapper.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitsCollectionMeta.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitsCollectionResource.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitMapper.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitMeta.cs" />
+    <Compile Include="src-server\OrgUnitsApi\Resources\OrgUnitResource.cs" />
+    <Compile Include="src-server\PayPunchShift\Enums\PairedStatusCode.cs" />
+    <Compile Include="src-server\PayPunchShift\Enums\PairedStatusCodeEnumRegistry.cs" />
+    <Compile Include="src-server\PayPunchShift\Enums\PayPunchedShiftDayCutEnumRegistry.cs" />
+    <Compile Include="src-server\PayPunchShift\Enums\PayPunchedShiftDayCutStatus.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedShiftDetailMapper.cs" />
+    <Compile Include="src-server\PayScheduledShift\Enum\ScheduledShiftDayCutStatus.cs" />
+    <Compile Include="src-server\PayScheduledShift\Enum\ScheduledShiftDayCutStatusEnumRegistry.cs" />
+    <Compile Include="src-server\PayScheduledShift\PayScheduledShiftMapper.cs" />
+    <Compile Include="src-server\PayScheduledShift\PayScheduledShiftResource.cs" />
+    <Compile Include="src-server\ReasonsApi\ErrorResponses\ReasonTypeIdNotFound.cs" />
+    <Compile Include="src-server\ReasonsApi\ErrorResponses\ReasonIsNotCDMedToSite.cs" />
+    <Compile Include="src-server\ReasonsApi\OperationCoordinators\GetByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\ReasonsApi\OperationCoordinators\GetByTypeOperationCoordinator.cs" />
+    <Compile Include="src-server\ReasonsApi\Queries\GetById.cs" />
+    <Compile Include="src-server\ReasonsApi\Queries\GetByType.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsApiOperationFactory.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsCollectionMapper.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsCollectionMeta.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsCollectionResource.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonsController.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonMapper.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonMeta.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonResource.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\OperationCoordinators\GetAllOperationCoordinator.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\OperationCoordinators\GetByIdOperationCoordinator.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\Queries\GetAll.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\Queries\GetById.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeApiOperationFactory.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeCollectionMapper.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeCollectionMeta.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeCollectionResource.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypesController.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeMapper.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeMeta.cs" />
+    <Compile Include="src-server\ReasonsApi\ReasonTypesApi\ReasonTypeResource.cs" />
+    <Compile Include="src-server\ReferenceDataApi\ErrorResponses\InvalidSecurityGroup.cs" />
+    <Compile Include="src-server\ReferenceDataApi\ErrorResponses\InvalidSite.cs" />
+    <Compile Include="src-server\ReferenceDataApi\ReferenceDataApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\ReferenceDataApi\ReferenceDataApiOperationFactory.cs" />
+    <Compile Include="src-server\ReferenceDataApi\ReferenceDataController.cs" />
+    <Compile Include="src-server\ReferenceDataApi\OperationCoordinators\ReferenceDataBySiteAndSecurityGroupOperationCoordinator.cs" />
+    <Compile Include="src-server\ReferenceDataApi\OperationCoordinators\ReferenceDataOperationCoordinator.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Queries\GetReferenceDataQuery.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\MyReferenceDataMeta.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\ReferenceDataDto.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\ReferenceDataMapper.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\ReferenceDataResource.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\SecurityGroup\SecurityGroupDto.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\SecurityGroup\UserSecurityGroupMapper.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\SecurityGroup\UserSecurityGroupResource.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\SiteTimeZoneMapper.cs" />
+    <Compile Include="src-server\ReferenceDataApi\Resource\SiteTimeZoneResource.cs" />
+    <Compile Include="src-server\ScheduledJobTransfer\ScheduledJobTransferMapper.cs" />
+    <Compile Include="src-server\ScheduledJobTransfer\ScheduledJobTransferResource.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedJobTransferMapper.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedJobTransferResource.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedShiftDetailResource.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedShiftMapper.cs" />
+    <Compile Include="src-server\ScheduledShift\Enum\ScheduleDetailType.cs" />
+    <Compile Include="src-server\ScheduledShift\Enum\ScheduleDetailTypeEnumRegistry.cs" />
+    <Compile Include="src-server\ScheduledShift\ScheduledShiftDetailResource.cs" />
+    <Compile Include="src-server\ScheduledShift\ScheduledShiftDetailMapper.cs" />
+    <Compile Include="src-server\ScheduledShift\ScheduledShiftMapper.cs" />
+    <Compile Include="src-server\ScheduledShift\ScheduledShiftResource.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\OperationCoordinators\GetSecurityGroupDetailsCoordinator.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\Queries\GetAssignedSecurityGroups.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\Resource\SecurityGroupMeta.cs" />
+    <Compile Include="src-server\SecurityGroup\SecurityGroupResource.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\Resource\SecurityGroupsCollectionMapper.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\Resource\SecurityGroupsCollectionResource.cs" />
+    <Compile Include="src-server\SecurityGroup\SecurityGroupMapper.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\MySecurityGroupsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\MySecurityGroupsApiOperationFactory.cs" />
+    <Compile Include="src-server\MySecurityGroupsApi\MySecurityGroupsController.cs" />
+    <Compile Include="src-server\Common\Resources\Site\SiteNameMapper.cs" />
+    <Compile Include="src-server\Common\Resources\Site\SiteNameResource.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\ErrorResponses\EmployeeNotAssociatedToSite.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\ErrorResponses\SiteDoesNotExist.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\OperationCoordinators\GetSitePunchSettingsOperationCoordinator.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Queries\GetBySiteId.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteBeacon\SiteBeaconMapper.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteBeacon\SiteBeaconResource.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteGeofence\SiteGeofenceMapper.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteGeofence\SiteGeofenceResource.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SitePunchSettingsMapper.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SitePunchSettingsMeta.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SitePunchSettingsResource.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteWifi\SiteWifiMapper.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\Resource\SiteWifi\SiteWifiResource.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\SitePunchSettingsApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\SitePunchSettingsApiOperationFactory.cs" />
+    <Compile Include="src-server\SitePunchSettingsApi\SitePunchSettingsController.cs" />
+    <Compile Include="src-server\SitesApi\ErrorResponses\SiteDoesNotExist.cs" />
+    <Compile Include="src-server\SitesApi\OperationCoordinators\GetSiteByDateOperationCoordinator.cs" />
+    <Compile Include="src-server\SitesApi\Queries\GetSiteByDate.cs" />
+    <Compile Include="src-server\SitesApi\SiteApiOperationCoordinatorFactory.cs" />
+    <Compile Include="src-server\SitesApi\SiteApiOperationFactory.cs" />
+    <Compile Include="src-server\SitesApi\SiteController.cs" />
+    <Compile Include="src-server\SitesApi\SiteMapper.cs" />
+    <Compile Include="src-server\SitesApi\SiteMeta.cs" />
+    <Compile Include="src-server\SitesApi\SiteResource.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryIncomingRequestMapper.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryIncomingRequestResource.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryMapper.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryOutgoingRequestMapper.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryOutgoingRequestResource.cs" />
+    <Compile Include="src-server\SwapShiftSummary\SwapShiftSummaryResource.cs" />
+    <Compile Include="src-server\TimeOffAudit\TimeOffAuditMapper.cs" />
+    <Compile Include="src-server\TimeOffAudit\TimeOffAuditResource.cs" />
+    <Compile Include="src-server\TimeOffRequest\Enums\TimeOffCategoryCodeEnumRegistry.cs" />
+    <Compile Include="src-server\TimeOffRequest\Enums\TimeOffCategoryCode.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestAuditMapper.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestAuditResource.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestDayMapper.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestDayResource.cs" />
+    <Compile Include="src-server\TimeOffRequest\Enums\RequestStatusCode.cs" />
+    <Compile Include="src-server\TimeOffRequest\Enums\RequestStatusCodeEnumRegistry.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestMapper.cs" />
+    <Compile Include="src-server\TimeOffTypeAccrualBalance\TimeOffTypeAccrualBalanceMapper.cs" />
+    <Compile Include="src-server\TimeOffTypeAccrualBalance\TimeOffTypeAccrualBalanceResource.cs" />
+    <Compile Include="src-server\TimeOffType\TimeOffTypeMapper.cs" />
+    <Compile Include="src-server\TimeOffType\TimeOffTypeMeta.cs" />
+    <Compile Include="src-server\TimeOffType\TimeOffTypeResource.cs" />
+    <Compile Include="src-server\Tips\TipsMapper.cs" />
+    <Compile Include="src-server\Tips\TipsResource.cs" />
+    <Compile Include="src-server\PayPunchShift\PayPunchedShiftResource.cs" />
+    <Compile Include="src-server\TimeOffRequest\TimeOffRequestResource.cs" />
+    <Compile Include="src-server\Common\Resources\User\UserMapper.cs" />
+    <Compile Include="src-server\Common\Resources\User\UserResource.cs" />
+    <Compile Include="WebApiConfigurator.cs" />
+    <Compile Include="WebApiConfiguratorImpl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="build.config" />
+    <Content Include="log4net.config" />
+    <Content Include="log4net.config.release" />
+    <Content Include="Web.config.release">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src-server\MyCallOffApi\Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\DomainModel\DomainModel.csproj">
+      <Project>{8a72436a-e0af-4764-a82c-34e6162dd447}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Lance\Lance.csproj">
+      <Project>{a48b7d72-bf53-4623-bef1-23ed61910649}</Project>
+      <Name>Lance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Perigee\Perigee.csproj">
+      <Project>{4e314ec4-e0a2-4fc6-b79d-31487f5dcd20}</Project>
+      <Name>Perigee</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SharedBinaries\Source\RPCore\RPCore.csproj">
+      <Project>{5485cc59-4f29-47e5-87cb-80e586680eb1}</Project>
+      <Name>RPCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SharedBinaries\Source\SessionState\SessionState.csproj">
+      <Project>{96f479ee-cea2-45a7-b7d9-569c5f5d14b4}</Project>
+      <Name>SessionState</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\ShiftConnect\ShiftConnect.csproj">
+      <Project>{A3BFF4FA-9718-4FF2-A3CF-6B6E09BC8546}</Project>
+      <Name>ShiftConnect</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ApiIndex.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\AutoResolveEmployeeJobAssignment.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\AutoResolveEmployeeStatuses.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\BusinessDate.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CalendarDate.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ErrorResponses.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\FreeText.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\IgnoreWarningsTimeOffRequests.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SiteLocalTimestamp.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61613</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/WfmEssApi</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>SET WFMESSAPIDIR=$(ProjectDir)
+SETX WFMESSAPIDIR $(ProjectDir)
+
+if $(ConfigurationName) == DebugNoDeploy goto :exit
+if $(ConfigurationName) == Debug goto :debug
+
+:release
+copy /Y "..\web.config.release" "..\web.config"
+copy /Y "..\log4net.config.release" "..\log4net.config"
+
+del ..\build.config
+echo ^&lt;appSettings^&gt;^&lt;add key="build_date" value="%25date%25 %25time%25" /^&gt; &gt;&gt; ..\build.config
+
+for /F "delims=" %25%25i in (..\wfmessapi.version) do set WFMESSAPIDIR_TAG_CONTENT=%25%25i
+set WFMESSAPIDIR_TAG=^^^&lt;add key=^^^"version^^^" value=^^^"%25WFMESSAPIDIR_TAG_CONTENT%25^^^" /^^^&gt;
+echo %25WFMESSAPIDIR_TAG%25 &gt;&gt; ..\build.config
+
+for /F "delims=" %25%25i in (..\SVNRevision.txt) do set WFMESSAPIDIR_TAG_CONTENT=%25%25i
+set WFMESSAPIDIR_TAG=^^^&lt;add key=^^^"svn_revision^^^" value=^^^"%25WFMESSAPIDIR_TAG_CONTENT%25^^^" /^^^&gt;
+echo %25WFMESSAPIDIR_TAG%25 &gt;&gt; ..\build.config
+
+for /F "delims=" %25%25f in (..\FinalBuild.txt) do set WFMESSAPIDIR_TAG_CONTENT2=%25%25f
+set WFMESSAPIDIR_TAG=^^^&lt;add key=^^^"final^^^" value=^^^"%25WFMESSAPIDIR_TAG_CONTENT2%25^^^" /^^^&gt;
+echo %25WFMESSAPIDIR_TAG%25 &gt;&gt; ..\build.config
+
+echo ^&lt;/appSettings^&gt;  &gt;&gt; ..\build.config
+
+goto :exit
+
+:debug
+set APPDIR=$(ProjectDir)
+call ..\..\..\Common\Tools\DeployToRefs\DeployToRefs.bat "$(ProjectDir)"
+
+:exit</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

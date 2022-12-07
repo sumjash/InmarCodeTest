@@ -1,0 +1,90 @@
+<AzureConfig>
+  <!--Either IdentityContext or AccessToken section can exist, not both-->
+  <liamRealmServiceUri description="Uri of LIAM Realm Service">https://api-tst.jdadelivers.com/iam/realm/v1/</liamRealmServiceUri>
+  <apiGatewayUri description="Uri of Azure API Gateway">APIGATEWAY</apiGatewayUri>
+  <identityContext>
+    <byRealmId description="Globally Unique Identifier for a customer and environment combination. Please get this Id from registering a realm with the LIAM team. Important do not use the same Id for multiple customers. If you do then those customers can see each others data.">5c335b18-b076-4c1b-bbe1-3aefe66a01ba</byRealmId>
+    <byRealmName description="User friendly name for a customer and environment combination.">by-realm</byRealmName>
+  </identityContext>
+  <services>
+    <service description="service specific configuration">
+      <name description="service name">Scheduling</name>
+      <apiGatewayUri>
+      </apiGatewayUri>
+      <appendingServiceUri>autoscheduling/</appendingServiceUri>
+      <identityContext>
+        <byRealmId description="Globally Unique Identifier for a customer and environment combination.  Please get this Id from registering a realm with the LIAM team.  Important do not use the same Id for multiple customers.  If you do then those customers can see each others data.">
+        </byRealmId>
+        <byRealmName description="User friendly name for a customer and environment combination.">
+        </byRealmName>
+      </identityContext>
+    </service>
+    <service description="service specific configuration">
+      <name description="service name">StaffPlanning</name>
+      <apiGatewayUri>
+      </apiGatewayUri>
+      <appendingServiceUri>staffplanning/</appendingServiceUri>
+      <identityContext>
+        <byRealmId description="Globally Unique Identifier for a customer and environment combination.  Please get this Id from registering a realm with the LIAM team.  Important do not use the same Id for multiple customers.  If you do then those customers can see each others data.">
+        </byRealmId>
+        <byRealmName description="User friendly name for a customer and environment combination.">
+        </byRealmName>
+      </identityContext>
+    </service>
+  </services>
+  <personaLIAMSettings>
+    <identityContextSettings>
+      <identityContextHeaderKey description="Identity Context Header Key">IDENTITY-CONTEXT</identityContextHeaderKey>
+      <byRealmId description="ByRealmId">5c335b18-b076-4c1b-bbe1-3aefe66a01ba</byRealmId>
+    </identityContextSettings>
+    <cacheSettings>
+      <cacheSlidingExpiryInMinutes description="Cache Sliding Expiry In Minutes">
+        60
+      </cacheSlidingExpiryInMinutes>
+      <cacheDeltaBackoffInMilliSeconds description="Cache Delta Backoff In Milliseconds">
+        10
+      </cacheDeltaBackoffInMilliSeconds>
+      <cacheMaxDeltaBackOffInMilliseconds description="Cache Max Delta Backoff In Milliseconds">
+        500
+      </cacheMaxDeltaBackOffInMilliseconds>
+      <cacheConnectionRetryAttempts description="Cache Connection Retry Attempts">
+        3
+      </cacheConnectionRetryAttempts>
+      <cacheConnectionTimeoutInMilliSeconds description="Cache Connection Timeout In Milliseconds">
+        2000
+      </cacheConnectionTimeoutInMilliSeconds>
+      <cacheOperationRetryAttempts description="Cache Operation Retry Attempts">
+        4
+      </cacheOperationRetryAttempts>
+      <cacheOperationExceptionsAllowedBeforeBreaking description="Cache Operation Exceptions Allowed Before Breaking">
+        100
+      </cacheOperationExceptionsAllowedBeforeBreaking>
+      <cacheOperationCircuitBreakerDurationInMilliseconds description="Cache Operation Circuit Breaker Duration In Milliseconds">
+        60000
+      </cacheOperationCircuitBreakerDurationInMilliseconds>
+      <cacheOperationMedianFirstRetryDelayInMilliseconds description="Cache Operation Median First Retry Delay In Milliseconds">
+        100
+      </cacheOperationMedianFirstRetryDelayInMilliseconds>
+    </cacheSettings>
+    <secretStoreSettings>
+      <managedIdentityClientId description="Managed Identity ClientId">
+        670e9a54-8b0c-4fc5-8f3f-9d7c9d2afcc4
+      </managedIdentityClientId>
+      <keyVaultUri description="Key Vault Uri">
+        https://kyv-wfm-replatforming.vault.azure.net/
+      </keyVaultUri>
+      <keyVaultSecretName description="Key Vault Secret Name">
+        wfmredisconnectionstring
+      </keyVaultSecretName>
+      <keyVaultConnectionRetryDelayInMilliseconds description="Key Vault Connection Retry Delay In Milliseconds">
+        100
+      </keyVaultConnectionRetryDelayInMilliseconds>
+      <keyVaultConnectionMaxRetryDelayInMilliseconds description="Key Vault Connection Max Retry Delay In Milliseconds">
+        1000
+      </keyVaultConnectionMaxRetryDelayInMilliseconds>
+      <keyVaultConnectionMaxRetryAttempts description="Key Vault Connection Max Retry Attempts">
+        5
+      </keyVaultConnectionMaxRetryAttempts>
+    </secretStoreSettings>
+  </personaLIAMSettings>
+</AzureConfig>

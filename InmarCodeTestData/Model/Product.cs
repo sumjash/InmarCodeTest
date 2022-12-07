@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace InmarCodeTestData
 {
-  public class Product : IComparable<Product>
+  public class Product //: IComparable<Product>
   {
     public string Name { get; set; }
     public decimal Price { get; set; }

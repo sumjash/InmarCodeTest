@@ -1,0 +1,38 @@
+﻿@{
+    var title = string.IsNullOrEmpty(ViewBag.Title) ? "WFM ESS API Help" : ViewBag.Title;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+    <link href="@HttpContext.Current.Request.ApplicationPath/Content/site.css" rel="stylesheet" />
+    <script src="@HttpContext.Current.Request.ApplicationPath/Scripts/modernizr-2.7.2.js"> </script>
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <img src="~/Images/logo-blueyonder-M.png" alt="BlueYonder" />
+                    &nbsp;
+                  @Html.ActionLink("WFM ESS API", "Index", "Help", new { area = "HelpPage" }, null)
+                </p>
+            </div>
+            <div class="float-right">
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                        <li><a href="@HttpContext.Current.Request.ApplicationPath/Help/Api">API</a></li>@*Not sure why the ActionLink wouldn't work for this, would give /Help/Api on "~/Help/Api", but not on "~/Help/Api/foo"*@
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <script src="@HttpContext.Current.Request.ApplicationPath/Scripts/jquery-2.1.1.min.js"> </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -37,7 +37,7 @@ namespace InmarCodeTestData
     public IList<Product> SortedProducts()
     {
       var arrayOfElement = _Inventory.ToArray();
-       Array.Sort<Product>(arrayOfElement);
+      Array.Sort<Product>(arrayOfElement);
       return arrayOfElement.ToList();
     }
 
@@ -57,7 +57,7 @@ namespace InmarCodeTestData
         var productList = new List<Product>();
         for (int j = 0; j <=2; j++)
         {
-          var randomNumber1 = random.Next(0, 5);
+          var randomNumber1 = random.Next(0, _Inventory.Count()-1);
           var product = _Inventory[randomNumber1];
           productList.Add(product);
         }

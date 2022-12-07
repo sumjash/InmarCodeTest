@@ -1,0 +1,14 @@
+@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@using Jda.WfmEssApi.Areas.HelpPage
+@model ComplexTypeModelDescription
+@{
+    string typeOverridePage = ComplexTypeModelDescriptionExtensions.SelectTypeOverrideOrReturnEmpty(Model.ModelType.FullName);
+}
+@if (typeOverridePage.IsEmpty())
+{
+    @Html.DisplayFor(m => m.Properties, "Parameters")
+}
+else
+{
+    @Html.DisplayFor(m => m.Name, typeOverridePage)
+}

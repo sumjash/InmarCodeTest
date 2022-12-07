@@ -38,7 +38,6 @@ namespace InmarLogicalTest
       Program p = new Program();
       p.PrintFizzBuzz(15);
       Console.WriteLine(p.Reverse("abcde"));
-      Console.WriteLine("Hello World!");
     }
   }
 }

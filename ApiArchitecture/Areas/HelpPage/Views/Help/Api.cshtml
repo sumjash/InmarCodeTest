@@ -1,0 +1,18 @@
+@using System.Web.Http
+@using Jda.WfmEssApi.Areas.HelpPage.Models
+@model Jda.WfmEssApi.Areas.HelpPage.Models.HelpPageApiModel
+
+@{
+    var description = Model.ApiDescription;
+    ViewBag.Title = description.HttpMethod.Method + " " + description.RelativePath;
+}
+
+<div id="body">
+    <section class="content-wrapper main-content clear-fix">
+        @Html.DisplayFor(m => Model)
+    </section>
+</div>
+
+@section Scripts {
+    <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+}

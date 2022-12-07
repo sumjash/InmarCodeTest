@@ -1,0 +1,127 @@
+﻿@model string
+
+<h2>Auto-Resolve Behavior</h2>
+<br/>
+<table class="help-page-table">
+  <thead>
+    <tr>
+      <th>Transactional Data</th>
+      <th>Condition</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="parameter-name">
+        <p>Pay Adjustments and Time Off Requests</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status starts past, current, or future relative to current day. The pay adjustment or time off
+          request date is contained within the new employee status record dates. The pay adjustment or time off
+          request starts after the status record start date and is in an open or a closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          The following exception occurs and no changes are applied.
+          EmployeeStatusErrorCode.CannotUpdateEmployeeStatusDueToPayAdjustments
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>Back Pay</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status starts past, current, or future relative to current day.
+          The back pay start date is contained within the new employee status record dates.
+          The punched shift starts in the past (less than or equal to the current date and
+          greater than or equal to the new employee status record start date) or the future and
+          is in a closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          The following exception occurs and no changes are applied when a back pay adjustment exists.
+          CannotUpdateEmployeeStatusDueToBackPayPunch
+          The following exception occurs and no changes are applied when a back pay punch exists.
+          CannotUpdateEmployeeStatusDueToBackPayAdjustment
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>Punch Exceptions</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status starts past, current, or future relative to current day. The punch exception date is
+          contained within the new employee status record dates. The punch exception starts after the status
+          record start date and is in an open or a closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          A new status record is created. The previous status record is end dated (end date is exclusive).
+          The punch exceptions after the new employee status record date are deleted.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>Punched Shift</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status starts past, current, or future relative to current day. The punched shift start date is
+          contained within the new employee status record dates. The punched shift starts after the status record
+          start date and is in an open or a closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          The following exception occurs and no changes are applied.
+          EmployeeStatusErrorCode.CannotUpdateEmployeeStatusDueToPunchShifts
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>Scheduled Shift</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status starts past, current, or future relative to current day. The scheduled shift start date
+          is contained within the new employee status record dates. The scheduled shift starts after the status
+          record start date and is in an open or a closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          A new status record is created. The previous status record is end dated (end date is exclusive).
+          The scheduled shifts after the new employee status record date are unfilled.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>Unpaid Time Off Request</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          The status record starts past, current, or future relative to current day. Unpaid time off request
+          exists in an open or closed pay period.
+        </p>
+      </td>
+      <td class="parameter-type">
+        <p>
+          A new status record is created. The previous status record is end dated (end date is exclusive).
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

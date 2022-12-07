@@ -31,6 +31,8 @@ namespace InmarCodeTestApis.Controllers
     [Route("GetAllProduct")]
     public IList<Product> GetAllProduct()
     {
+      //oops!! could have used rderBy from Linq to sort the data :)
+      //Instead of Implementing IComparable in the Product class 
       var products = _Service.SortedProducts();
       var lowerstPriceProducts = products.ToList().Take(3);
       return lowerstPriceProducts.ToList();
@@ -41,6 +43,8 @@ namespace InmarCodeTestApis.Controllers
     [Route("GetProductWithSecondLowestPrice")]
     public Product GetProductWithSecondLowestPrice()
     {    
+      //oops!! could have used orderBy from Linq to sort the data :)
+      //Instead of Implementing IComparable in the Product class 
       var products = _Service.SortedProducts();
       var lowerstPriceProducts = products[1];
       return lowerstPriceProducts;

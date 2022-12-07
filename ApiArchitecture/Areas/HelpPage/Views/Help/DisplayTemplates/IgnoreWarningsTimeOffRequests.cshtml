@@ -1,0 +1,98 @@
+﻿@model string
+
+<h2>Ignore Warnings Behavior</h2>
+<br/>
+<p>
+  When creating or updating a time off request, you may receive an error because of
+  one of the following: <ul>
+    <li>Time off request's date range is longer than settings provided in Client Settings in Enterprise</li>
+    <li>Time off request's date range is falling under black out period configured in Enterprise</li>
+    <li>Time off request's hours violating employee's accrual balance</li>
+  </ul>
+  To skip these warnings and still create a time off request, add <code>ignoreWarnings</code> in the URL:
+</p>
+<table class="help-page-table">
+  <thead>
+  <tr>
+    <th>Number of warnings to ignore</th>
+    <th>URL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="parameter-name">
+      <p>any specific warning</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        api/[version]/timeOffRequests/{timeOffRequestId}?ignoreWarnings=RequestLongerThanClientSetting
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>more than one specific warning (separate the warnings with comma)</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        api/[version]/timeOffRequests/{timeOffRequestId}?ignoreWarnings=RequestLongerThanClientSetting,BlackoutPeriodOverlap
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="parameter-name">
+      <p>all (to ignore all of 3 warnings)</p>
+    </td>
+    <td class="parameter-documentation">
+      <p>
+        api/[version]/timeOffRequests/{timeOffRequestId}?ignoreWarnings=*
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+<table class="help-page-table">
+  <thead>
+    <tr>
+      <th>Valid warning to be specified in URL</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="parameter-name">
+        <p>RequestLongerThanClientSetting</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          To ignore if time off request's date range is longer than settings provided in Client Settings in 
+          Enterprise and update the time off request
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>BlackoutPeriodOverlap</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          To ignore if time off request's date range is falling under black out period configured in Enterprise 
+          and update the time off request
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="parameter-name">
+        <p>AccrualBalanceViolation</p>
+      </td>
+      <td class="parameter-documentation">
+        <p>
+          To ignore if time off request's hours violating employee's accrual balance and update the time off request
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

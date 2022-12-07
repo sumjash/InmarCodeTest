@@ -1,0 +1,18 @@
+﻿@using Jda.WfmEssApi.Areas.HelpPage.ModelDescriptions
+@model string
+
+<h3>Format</h3>
+<p>
+    The request and response entity serialization format for BusinessDate is "yyyy-MM-ddT00:00:00," for example
+    "2017-01-31T00:00:00". The time portion is required in requests but must be midnight (all zeros).
+</p>
+<p>
+    The URI serialization format for BusinessDate is "yyyy-MM-dd", for example "2017-01-31". Do not include the time portion.
+</p>
+
+<h3>Description</h3>
+<p>A date as the business defines it. When translated to a calendar this is a one day period starting on the Labor Day
+    Start Time of the specified Calendar Date and ending just prior to the Labor Day Start Time of the next Calendar Date.
+    It does not include the Labor Day Start Time of the next date. Most UIs display items for the Business Date or a range
+    of them, regardless of the type of date the items displayed are stored with. These can be compared across Sites without
+    any need to translate to a common time zone. <br/>Example usage: Employee Hire Date</p>
